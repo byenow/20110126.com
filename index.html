@@ -85,6 +85,20 @@
     #minute span,#second span{
       font-size: 20px;
     }
+    #count{
+      width: 100px;
+      height: 30px;
+      background-color: #00B5AD;
+      border-radius: 0 0 10px 10px;
+      color: white;
+      line-height: 30px;
+      font-size: 12px;
+      position: absolute;
+      top: 0px;
+      left: 100px;
+      transition: 300ms ease-in-out;
+      margin-top: -30px;
+    }
   </style>
 </head>
 <script type="text/javascript" src="main.js"></script>
@@ -98,6 +112,7 @@
     <div id="second"></div>
     <div>
   </div>
+  <div id="count"></div>
   <script type="text/javascript">
   var now = new Date();
   var hour = now.getHours();
@@ -106,7 +121,6 @@
   var now = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
   var past = "2011-1-26";
   var day = DateDiff(past, now);
-
   function DateDiff(sDate1, sDate2) { //sDate1和sDate2是2006-12-18格式
     var aDate, oDate1, oDate2, iDays
     aDate = sDate1.split("-")
@@ -120,6 +134,10 @@
   document.getElementById("hour").innerHTML = hour + "<span>小时</span>";
   document.getElementById("minute").innerHTML = minute + "<span>分钟</span>";
   document.getElementById("second").innerHTML = second + "<span>秒</span>";
+  document.getElementById("count").innerHTML = "倒计时"+(2000-day)+"天"
+  setTimeout(function(){
+    document.getElementById("count").style.marginTop = "0px";
+  },800)
   </script>
 </body>
 
