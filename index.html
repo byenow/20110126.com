@@ -1,149 +1,19 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>20110126.com</title>
-  <style media="screen">
-    * {
-      padding: 0px;
-      margin: 0px;
-
-    }
-
-    body {
-      background: url(bg.png);
-      text-align: center;
-    }
-
-    h1 {
-      color: #00B5AD;
-      line-height: 200px;
-    }
-
-    .container {
-      margin: 0px auto;
-      width: 600px;
-      height: 220px;
-      background-color: #00B5AD;
-      border-radius: 40px;
-      transition: 300ms ease-in-out;
-    }
-
-    .container:hover {
-      background-color: #009690;
-    }
-    #content{
-      display: inline-block;
-      width: 280px;
-      height: 220px;
-      float: right;
-    }
-    #day {
-      display: inline-block;
-      width: 320px;
-      color: white;
-      font-size: 120px;
-      height: 220px;
-      line-height: 220px;
-      float: left;
-      position: relative;
-      left: 20px;
-    }
-
-    #day span {
-      font-size: 30px;
-    }
-
-    #hour {
-      margin: 0 auto;
-      color: white;
-      font-size: 100px;
-      height: 110px;
-      line-height: 110px;
-      position: relative;
-      top: 30px;
-    }
-    #hour span{
-      font-size: 40px;
-    }
-    #minute{
-      display: inline-block;
-      color: white;
-      height: 110px;
-      line-height: 110px;
-      font-size: 40px;
-    }
-
-    #second {
-      display: inline-block;
-      color: white;
-      height: 110px;
-      line-height: 110px;
-      font-size: 45px;
-    }
-    #minute span,#second span{
-      font-size: 20px;
-    }
-    #count{
-      width: 100px;
-      height: 30px;
-      background-color: #00B5AD;
-      border-radius: 0 0 10px 10px;
-      color: white;
-      line-height: 30px;
-      font-size: 12px;
-      position: absolute;
-      top: 0px;
-      left: 100px;
-      transition: 300ms ease-in-out;
-      margin-top: -30px;
-    }
-  </style>
-</head>
-<script type="text/javascript" src="main.js"></script>
+  <title>webpack boilerplate</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content=" boilerplate">
+  <meta name="description" content=" boilerplate ">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="address=no" name="format-detection">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+<link href="/main.a9085239.css" rel="stylesheet"></head>
 <body>
-  <h1>距离2011年1月26日已经</h1>
-  <div class="container">
-    <div id="day"></div>
-    <div id="content">
-    <div id="hour"></div>
-    <div id="minute"></div>
-    <div id="second"></div>
-    <div>
-  </div>
-  <script type="text/javascript">
-  var now = new Date();
-  var hour = now.getHours();
-  var minute = now.getMinutes();
-  var second = now.getSeconds();
-  var now = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
-  var past = "2011-1-26";
-  var day = DateDiff(past, now);
-  function DateDiff(sDate1, sDate2) { //sDate1和sDate2是2006-12-18格式
-    var aDate, oDate1, oDate2, iDays
-    aDate = sDate1.split("-")
-    oDate1 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0]) //转换为12-18-2006格式
-    aDate = sDate2.split("-")
-    oDate2 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0])
-    iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24) //把相差的毫秒数转换为天数
-    return iDays
-  }
-  document.getElementById("day").innerHTML = day + "<span>天</span>";
-  document.getElementById("hour").innerHTML = hour + "<span>小时</span>";
-  document.getElementById("minute").innerHTML = minute + "<span>分钟</span>";
-  document.getElementById("second").innerHTML = second + "<span>秒</span>";
-  </script>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-76399894-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</body>
-
+  <div id="app"></div>
+<script type="text/javascript" src="/vendor.a9085239.js"></script><script type="text/javascript" src="/main.a9085239.js"></script></body>
 </html>
