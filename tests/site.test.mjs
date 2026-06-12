@@ -77,3 +77,25 @@ test('content references local photos with explicit credits', () => {
   assert.match(app, /credit:/);
 });
 
+test('place cards include deeper context and expanded reliable photo sets', () => {
+  const app = read('app.js');
+  const css = read('styles.css');
+  const histories = [...app.matchAll(/\n\s+history:\s*['"]/g)];
+  const cultures = [...app.matchAll(/\n\s+culture:\s*['"]/g)];
+  const photoGroups = [...app.matchAll(/photos:\s*\[([\s\S]*?)\n\s*\]/g)];
+  const sourceRefs = [...app.matchAll(/source:\s*(?:['"]https:\/\/[^'"]+['"]|commonsPage\(['"][^'"]+['"]\))/g)];
+  const trustedPhotoSrc = /src:\s*(?:['"]((?:assets\/|https:\/\/(?:commons\.wikimedia\.org\/wiki\/Special:FilePath\/|upload\.wikimedia\.org\/))[^'"]+)['"]|commonsFile\(['"][^'"]+['"]\))/g;
+
+  assert.ok(histories.length >= 13, `expected history background for every place, found ${histories.length}`);
+  assert.ok(cultures.length >= 13, `expected culture background for every place, found ${cultures.length}`);
+  assert.ok(photoGroups.length >= 13, `expected photo groups for every place, found ${photoGroups.length}`);
+  for (const group of photoGroups) {
+    const trustedPhotos = [...group[1].matchAll(trustedPhotoSrc)];
+    assert.ok(trustedPhotos.length >= 3, `expected at least 3 trusted photos in group, found ${trustedPhotos.length}`);
+  }
+  assert.ok(sourceRefs.length >= 39, `expected at least 39 HTTPS image sources, found ${sourceRefs.length}`);
+  assert.doesNotMatch(app, /source:\s*['"]http:\/\//);
+  assert.match(app, /renderPlaceContext/);
+  assert.match(css, /\.place-context/);
+});
+

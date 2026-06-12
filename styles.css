@@ -214,6 +214,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--highlight); out
 .tip-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 28px; margin: 24px 0 0; padding: 0; list-style: none; }
 .tip-list li { position: relative; padding-left: 18px; color: var(--muted); font-size: 13px; }
 .tip-list li::before { content: "↳"; position: absolute; left: 0; color: var(--accent); }
+.place-context { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 28px; border: 1px solid var(--line); background: var(--line); border-radius: var(--radius); overflow: hidden; }
+.place-context section { padding: 20px; background: color-mix(in srgb, var(--surface) 92%, var(--bg-soft)); }
+.place-context span { display: block; margin-bottom: 8px; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.place-context p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
 .photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 30px; }
 .photo-grid-single { grid-template-columns: 1fr; }
 .photo-grid figure { margin: 0; overflow: hidden; background: var(--bg-soft); border-radius: var(--radius); }
@@ -310,6 +314,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--highlight); out
   .transit { grid-template-columns: 1fr; gap: 7px; }
   .notice { grid-template-columns: 1fr; gap: 6px; }
   .tip-list { grid-template-columns: 1fr; }
+  .place-context { grid-template-columns: 1fr; }
   .photo-grid { grid-template-columns: 1fr; }
   .photo-grid img { height: min(78vw, 430px); }
   .map-card { grid-template-columns: 1fr; }

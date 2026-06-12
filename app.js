@@ -10,6 +10,12 @@ const PHOTO_SOURCES = {
 
 const ANA767_PHOTO_SOURCE = 'https://commons.wikimedia.org/wiki/File:All_Nippon_Airways_Boeing_767-300_JA607A_NRT_(16665861328).jpg';
 
+const commonsFile = (filename) =>
+  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1600`;
+
+const commonsPage = (filename) =>
+  `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(filename)}`;
+
 const googleMap = (query) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 
@@ -77,6 +83,8 @@ const trip = {
           status: 'optional',
           statusText: '可删减',
           description: '从 JP Tower 商场空间一路逛到屋顶花园，看东京站丸之内站舍亮灯。晚餐可在 KITTE 或东京站一带解决。',
+          history: 'KITTE 所在的 JP Tower 改建自旧东京中央邮便局用地，保留近代邮政建筑立面，与 1914 年开业的东京站丸之内站舍共同构成丸之内的城市门户。',
+          culture: '这里把邮政、商业、办公和公共屋顶庭园放在同一栋楼里，适合把东京的“上班族城市”和观光地东京站放在同一个视角里看。',
           tips: ['若 17:30 后才从酒店出发，建议跳过。', '赤坂/赤坂见附前往东京站或二重桥前，再步行。'],
           coordinates: [35.6798593, 139.7647819],
           mapQuery: 'KITTE Marunouchi',
@@ -84,6 +92,7 @@ const trip = {
           photos: [
             { src: 'assets/kitte.jpg', alt: 'JP Tower 与 KITTE 外观', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/4/41/JP_Tower-1c.jpg' },
             { src: 'assets/tokyo-station.jpg', alt: '东京站丸之内站舍', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Tokyo_Station_Marunouchi_Building_P5228787.jpg' },
+            { src: commonsFile('Tokyo_Station_Marunouchi_Building_P5228787.jpg'), alt: '丸之内一带的东京站景观', credit: PHOTO_SOURCES.commons, source: commonsPage('Tokyo_Station_Marunouchi_Building_P5228787.jpg') },
           ],
         },
       ],
@@ -110,6 +119,8 @@ const trip = {
           name: '国立西洋美术馆',
           kicker: '09:20 · Architecture & Art',
           description: '先看勒・柯布西耶设计的本馆建筑与常设展，再按兴趣进入 2026 年当期特展。控制在 90 分钟，11:00 准时离馆。',
+          history: '美术馆以松方幸次郎旧藏西洋艺术为基础，1959 年开馆。本馆由勒・柯布西耶设计，2016 年作为“勒・柯布西耶的建筑作品”组成部分列入世界文化遗产。',
+          culture: '它是战后日本重新连接欧洲艺术史的重要机构，也让上野公园的博物馆群从本土文物、自然科学扩展到西方绘画、雕塑和现代建筑。',
           tips: ['上野站公园口步行前往。', '当期特展预计于 6/21 结束，临行前复核官网。'],
           coordinates: [35.7155512, 139.7759424],
           mapQuery: 'National Museum of Western Art Tokyo',
@@ -118,6 +129,7 @@ const trip = {
           photos: [
             { src: 'assets/nmwa-exterior.jpg', alt: '国立西洋美术馆外观', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/National_museum_of_western_art05s3200.jpg' },
             { src: 'assets/nmwa-interior.jpg', alt: '国立西洋美术馆馆内空间', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Tokyo_National_Museum_of_Western_Art_Interior_2.jpg' },
+            { src: commonsFile('National_museum_of_western_art05s3200.jpg'), alt: '上野公园内的国立西洋美术馆建筑', credit: PHOTO_SOURCES.commons, source: commonsPage('National_museum_of_western_art05s3200.jpg') },
           ],
         },
         {
@@ -127,6 +139,8 @@ const trip = {
           statusText: '已预约',
           address: '日本〒106-0041 Tokyo, Minato City, Azabudai, 1 Chome−3−1 3F',
           description: '按厨师节奏享用 omakase。建议 12:15 前抵达所在楼层，用餐结束后不再加排项目，直接去池袋。',
+          history: '鮨麻布源自纽约同名寿司店的东京分店，落在近年更新完成的麻布台 Hills 区域，体现东京高端餐饮从银座、六本木向复合街区扩散的趋势。',
+          culture: 'Omakase 的重点不只是“吃到什么”，也包括入座节奏、师傅手部动作、米饭温度和当季鱼料的顺序；午餐时段更适合把体验控制在旅行节奏内。',
           tips: ['目标 15:20 前抵达新文芸坐。', '确认预约姓名与套餐信息。'],
           coordinates: [35.6614747, 139.7408267],
           mapQuery: 'Sushi Azabu Tokyo Azabudai Hills',
@@ -134,6 +148,7 @@ const trip = {
           photos: [
             { src: 'assets/sushi-food.jpg', alt: '鮨麻布寿司料理', credit: PHOTO_SOURCES.sushi, source: 'https://balconyby6th.com/en/sushiazabu/' },
             { src: 'assets/sushi-room.jpg', alt: '鮨麻布店内空间', credit: PHOTO_SOURCES.sushi, source: 'https://balconyby6th.com/en/sushiazabu/' },
+            { src: commonsFile('Azabudai_Hills_Mori_JP_Tower_2023.jpg'), alt: '鮨麻布所在的麻布台 Hills 街区', credit: PHOTO_SOURCES.commons, source: commonsPage('Azabudai_Hills_Mori_JP_Tower_2023.jpg') },
           ],
         },
         {
@@ -142,6 +157,8 @@ const trip = {
           status: 'booked',
           statusText: '已预约',
           description: '《一一》片长较长，入场前先补水并去洗手间。观影结束后不安排必须完成的项目，保留恢复体力的空间。',
+          history: '新文芸坐延续池袋文艺坐的名画座传统，长期以经典片、导演回顾和双片连映连接电影资料馆与大众放映文化。',
+          culture: '名画座是东京影迷文化的重要组成：观众不是为最新商业片而来，而是为大银幕、胶片记忆、专题策展和影史中的“再相遇”。',
           tips: ['建议 15:20 前抵达。', '票券提前保存离线。'],
           coordinates: [35.7325827, 139.7137059],
           mapQuery: 'Shin Bungeiza Ikebukuro',
@@ -150,6 +167,7 @@ const trip = {
           photos: [
             { src: 'assets/shin-bungeiza.jpg', alt: '新文芸坐影院外观', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Shin-Bungeiza_IMG_8231r_R_20151112.JPG' },
             { src: 'assets/yi-yi.jpg', alt: '电影《一一》放映海报', credit: PHOTO_SOURCES.shin, source: 'https://www.shin-bungeiza.com/' },
+            { src: commonsFile('Ikebukuro_East_Exit_2012.JPG'), alt: '新文芸坐所在的池袋东口一带', credit: PHOTO_SOURCES.commons, source: commonsPage('Ikebukuro_East_Exit_2012.JPG') },
           ],
         },
         {
@@ -158,6 +176,8 @@ const trip = {
           status: 'optional',
           statusText: '可删减',
           description: '按楼层集中看户外、跑步、球类和日系运动品牌。只有电影结束后仍有体力时才前往，建议停留 60—90 分钟。',
+          history: 'Alpen 源自日本大型体育零售体系，新宿旗舰店集合 Sport Depo、Alpen Outdoors 与 Golf5 等业态，是近年大型垂直零售回到市中心的代表。',
+          culture: '东京的运动用品店常兼具“购买”和“看日本企划”的意义：配色、联名、户外小物和跑步装备都能反映本地生活方式审美。',
           tips: ['与 KITTE 同属可删减项目。', '疲劳时直接返回赤坂。'],
           coordinates: [35.6934557, 139.7008272],
           mapQuery: 'Alpen TOKYO Shinjuku',
@@ -165,6 +185,7 @@ const trip = {
           photos: [
             { src: 'assets/alpen-building.jpg', alt: 'Alpen TOKYO 所在建筑', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Shinjuku_Yunika_Building_Alpen_TOKYO_%28Ready_to_open%29_March_2022.jpg' },
             { src: 'assets/alpen-exterior.jpg', alt: 'Alpen TOKYO 外观', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Shinjuku_Yunika_Building_Alpen_TOKYO_202408061151_IMG_0394.jpg' },
+            { src: commonsFile('Shinjuku_Yunika_Building_Alpen_TOKYO_202408061151_IMG_0394.jpg'), alt: '新宿街头的 Alpen TOKYO 建筑立面', credit: PHOTO_SOURCES.commons, source: commonsPage('Shinjuku_Yunika_Building_Alpen_TOKYO_202408061151_IMG_0394.jpg') },
           ],
         },
       ],
@@ -196,6 +217,8 @@ const trip = {
           status: 'booked',
           statusText: '已预约',
           description: '先看当期展览，再留至少 30 分钟给庭园、茶室与石佛。入口竹林步道很适合雨天，但庭园石阶湿滑时要放慢。',
+          history: '根津美术馆的收藏来自实业家根津嘉一郎，1941 年开馆，核心为东亚古美术、茶道具、佛教美术和书画。现建筑由隈研吾设计，2009 年重新开放。',
+          culture: '它的魅力在于“展厅和庭园一起看”：茶室、池泉、石佛与竹林把美术馆体验拉回日本茶会、庭园漫步和季节感。',
           tips: ['酒店前往表参道站，从 A5 出口一带步行。', '11:30 左右离馆。'],
           coordinates: [35.6622429, 139.7172555],
           mapQuery: 'Nezu Museum Tokyo',
@@ -203,12 +226,15 @@ const trip = {
           photos: [
             { src: 'assets/nezu-garden.jpg', alt: '根津美术馆庭园', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Nezu_Museum_Garten-20091020-RM-112901.jpg' },
             { src: 'assets/nezu-teahouse.jpg', alt: '根津美术馆庭园与茶室', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Nezu_Museum_Garten-20091020-RM-113550.jpg' },
+            { src: commonsFile('Nezu_Museum_Garten-20091020-RM-113550.jpg'), alt: '根津美术馆庭园中的茶室景观', credit: PHOTO_SOURCES.commons, source: commonsPage('Nezu_Museum_Garten-20091020-RM-113550.jpg') },
           ],
         },
         {
           name: '神保町',
           kicker: '12:10 · Books & Curry',
           description: '沿靖国通从三省堂周边向古书街慢走，按兴趣挑文学、设计、电影或摄影书店。午餐选神保町咖喱，再用老派喫茶店收尾。',
+          history: '神保町因明治大学、专修大学等学校与出版社聚集而发展成古书街，关东大地震和战后重建后仍保留大量书店、出版社和印刷相关行业。',
+          culture: '这里的逛法不是“买一本书”这么简单，而是进入东京的纸本文化：绝版书、电影海报、摄影集、学术旧书、咖喱店和喫茶店彼此相邻。',
           tips: ['不要设过多必去店，集中逛 2—3 家。', '14:10 左右离开。'],
           coordinates: [35.6950136, 139.7583761],
           mapQuery: 'Jimbocho Book Town',
@@ -216,12 +242,15 @@ const trip = {
           photos: [
             { src: 'assets/jimbocho-books.jpg', alt: '神保町古书店', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Used_bookstore_in_Jinb%C5%8Dch%C5%8D_001.jpg' },
             { src: 'assets/jimbocho-street.jpg', alt: '神保町书店街', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Sanseido_bookstore_kanda-jimbocho_Oct_15_2021_various.jpeg' },
+            { src: commonsFile('Used_bookstore_in_Jinbōchō_001.jpg'), alt: '神保町街角的古书店铺面', credit: PHOTO_SOURCES.commons, source: commonsPage('Used_bookstore_in_Jinbōchō_001.jpg') },
           ],
         },
         {
           name: 'BEAMS 原宿本店',
           kicker: '14:40 · Japanese Fashion',
           description: '重点看店铺限定、联名和日本企划，控制在 45—60 分钟。购物后从明治神宫前或代代木上原方向前往下北泽。',
+          history: 'BEAMS 1976 年创立于原宿，从美国休闲服饰买手店发展成覆盖服装、杂货、唱片、艺术合作的日本生活方式品牌。',
+          culture: '原宿本店适合看日本“编辑型零售”的能力：店铺把品牌、杂志感、音乐、街头文化和地方工艺组合成一种可购买的生活风格。',
           tips: ['优先看限定与联名。', '不要在周边继续扩展购物路线。'],
           coordinates: [35.6716426, 139.7083459],
           mapQuery: 'BEAMS Harajuku',
@@ -229,12 +258,15 @@ const trip = {
           photos: [
             { src: 'assets/beams-exterior.jpg', alt: 'BEAMS 原宿店外观', credit: PHOTO_SOURCES.beams, source: 'https://www.beams.co.jp/shop/h/' },
             { src: 'assets/beams-interior.jpg', alt: 'BEAMS 原宿店空间', credit: PHOTO_SOURCES.beams, source: 'https://www.beams.co.jp/shop/h/' },
+            { src: commonsFile('Takeshita_Street,_Harajuku,_Tokyo.jpg'), alt: 'BEAMS 所在的原宿街区氛围', credit: PHOTO_SOURCES.commons, source: commonsPage('Takeshita_Street,_Harajuku,_Tokyo.jpg') },
           ],
         },
         {
           name: '下北泽',
           kicker: '16:10 · Vintage & Records',
           description: '以车站为中心走 Bonus Track、reload 一带，再按兴趣进入古着店、独立唱片店和咖啡馆。给 90 分钟，不要为了打卡绕远。',
+          history: '下北泽在战后形成小剧场、Live House、古着和独立店铺混杂的街区性格；小田急线地下化后，车站周边又出现 reload、Bonus Track 等新空间。',
+          culture: '这里不像银座或表参道那样强调整齐品牌门面，而更像东京青年文化的拼贴：二手衣、唱片、小剧场、咖啡和窄巷散步共同构成气氛。',
           tips: ['17:50 左右回到下北泽站。', '搭京王井之头线前往吉祥寺。'],
           coordinates: [35.6615657, 139.6670604],
           mapQuery: 'Shimokitazawa Tokyo',
@@ -242,6 +274,7 @@ const trip = {
           photos: [
             { src: 'assets/shimokitazawa-street.jpg', alt: '下北泽街景', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/e/ed/Walk_in_Shimokitazawa_3.jpg' },
             { src: 'assets/shimokitazawa-walk.jpg', alt: '下北泽街区散步', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Walk_in_Shimokitazawa_4.jpg' },
+            { src: commonsFile('Walk_in_Shimokitazawa_3.jpg'), alt: '下北泽独立店铺与街巷', credit: PHOTO_SOURCES.commons, source: commonsPage('Walk_in_Shimokitazawa_3.jpg') },
           ],
         },
         {
@@ -250,6 +283,8 @@ const trip = {
           status: 'unbooked',
           statusText: '尚未预约',
           description: '按当前演出表，6/20 晚为 YOSHIAKI MASUO Bossa Animada Trio，费用约 ¥4,000，另需至少点一项餐饮。实际阵容与规则以店方回复为准。',
+          history: 'SOMETIME 是吉祥寺老牌爵士现场空间，长期承接日本本地乐手、小编制组合和近距离演出，是中央线沿线音乐文化的一部分。',
+          culture: '吉祥寺的爵士夜和白天的井之头公园、商店街气质相连：不追求大型舞台，而是把音乐放回日常餐饮、邻里和小空间的距离里。',
           tips: ['建议 18:30 前抵达吉祥寺。', '店内座位环绕舞台，入口位于商店街内。'],
           coordinates: [35.7047657, 139.5800892],
           mapQuery: 'SOMETIME Jazz Kichijoji',
@@ -258,6 +293,7 @@ const trip = {
           photos: [
             { src: 'assets/sometime-live.jpg', alt: 'SOMETIME 爵士演出现场', credit: PHOTO_SOURCES.sometime, source: 'https://www.sometime.co.jp/sometime/intro.html' },
             { src: 'assets/sometime-room.jpg', alt: 'SOMETIME 店内空间', credit: PHOTO_SOURCES.sometime, source: 'https://www.sometime.co.jp/sometime/intro.html' },
+            { src: commonsFile('Kichijoji_Sunroad_2012.JPG'), alt: 'SOMETIME 附近的吉祥寺商店街', credit: PHOTO_SOURCES.commons, source: commonsPage('Kichijoji_Sunroad_2012.JPG') },
           ],
         },
       ],
@@ -290,12 +326,16 @@ const trip = {
           status: 'tour',
           statusText: '一日团',
           description: '重点看阳明门、三猿、眠猫与杉木参道。建筑装饰信息量很大，优先听导游讲解关键图像和德川家康相关历史。',
+          history: '日光东照宫祭祀德川家康，江户初期由幕府大规模营建，1999 年随“日光的社寺”列入世界文化遗产。阳明门、唐门和本殿装饰体现德川权力的视觉秩序。',
+          culture: '这里的看点不是单一建筑，而是神道、佛教、幕府政治和工匠装饰的叠合；三猿、眠猫等图像也让严肃的权力空间带有民间故事性。',
           tips: ['台阶较多，鞋底需要防滑。', '先听讲解，再留少量自由拍照时间。'],
           coordinates: [36.7581, 139.5988],
           mapQuery: 'Nikko Toshogu',
           website: 'https://www.toshogu.jp/english/',
           photos: [
             { src: 'assets/nikko-toshogu.jpg', alt: '日光东照宫', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Nikko_toshogu_shrine.jpg' },
+            { src: commonsFile('Nikko_toshogu_shrine.jpg'), alt: '日光东照宫社殿群', credit: PHOTO_SOURCES.commons, source: commonsPage('Nikko_toshogu_shrine.jpg') },
+            { src: commonsFile('Yomeimon_Gate,_Nikko_Toshogu.jpg'), alt: '日光东照宫阳明门装饰', credit: PHOTO_SOURCES.commons, source: commonsPage('Yomeimon_Gate,_Nikko_Toshogu.jpg') },
           ],
         },
         {
@@ -304,12 +344,16 @@ const trip = {
           status: 'flow',
           statusText: '水量偏低',
           description: '日本代表性瀑布之一。即使水量偏低，峡谷地形与近百米落差仍值得观看；是否进入收费电梯观景台视团队停留时间决定。',
+          history: '华严瀑布由中禅寺湖湖水跌落形成，落差约 97 米，明治以来成为日光山岳观光的代表景观，也常与中禅寺湖、男体山一起被观看。',
+          culture: '它连接了日本近代避暑地、山岳信仰和观光摄影传统：同一处瀑布会因水量、雾气、红叶和雪季呈现完全不同的旅行记忆。',
           tips: ['资料照片为丰水期效果。', '实际水量受降雨和临时调度影响。'],
           coordinates: [36.738, 139.5028],
           mapQuery: 'Kegon Falls',
           website: 'https://www.pref.tochigi.lg.jp/h07/kegonnotaki_rakusuiryo.html',
           photos: [
             { src: 'assets/kegon-falls.jpg', alt: '华严瀑布丰水期景观', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Kegon_Taki.jpg' },
+            { src: commonsFile('Kegon_Taki.jpg'), alt: '华严瀑布与岩壁', credit: PHOTO_SOURCES.commons, source: commonsPage('Kegon_Taki.jpg') },
+            { src: commonsFile('Lake_Chuzenji_and_Mount_Nantai.jpg'), alt: '华严瀑布上游的中禅寺湖与男体山', credit: PHOTO_SOURCES.commons, source: commonsPage('Lake_Chuzenji_and_Mount_Nantai.jpg') },
           ],
         },
       ],
@@ -355,6 +399,8 @@ const trip = {
           name: '清澄白河',
           kicker: '09:15 · Garden & Coffee',
           description: '天气稳定时先走清澄庭园的泉水、假山与步石环线，再去附近咖啡店；若庭园临时关闭，则选择一家烘焙咖啡店加仓库街区散步。',
+          history: '清澄庭园原与江户豪商、明治期三菱创始人岩崎家相关，后作为东京市公园开放。周边仓库、水路和深川下町肌理共同塑造了今天的清澄白河。',
+          culture: '近年咖啡烘焙店进驻后，清澄白河形成“庭园、仓库、咖啡、下町散步”的组合；它比热门商业区安静，更适合返程日上午慢慢收束。',
           tips: ['周一营业情况差异较大，前一晚复核。', '11:15 必须开始返程。'],
           coordinates: [35.679981, 139.7977865],
           mapQuery: 'Kiyosumi Gardens',
@@ -363,6 +409,7 @@ const trip = {
           photos: [
             { src: 'assets/kiyosumi-garden.jpg', alt: '清澄庭园', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Kiyosumi_Garden_%2811301989825%29.jpg' },
             { src: 'assets/kiyosumi-view.jpg', alt: '清澄庭园景观', credit: PHOTO_SOURCES.gotokyo, source: 'https://www.gotokyo.org/en/spot/25/index.html' },
+            { src: commonsFile('Kiyosumi_Garden_(11301989825).jpg'), alt: '清澄庭园池泉与步石', credit: PHOTO_SOURCES.commons, source: commonsPage('Kiyosumi_Garden_(11301989825).jpg') },
           ],
         },
       ],
@@ -379,11 +426,19 @@ const renderPhotos = (photos) => `
   <div class="photo-grid ${photos.length === 1 ? 'photo-grid-single' : ''}">
     ${photos.map((photo) => `
       <figure>
-        <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async">
+        <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" onerror="this.closest('figure').hidden = true">
         <figcaption>${photo.alt} · <a href="${photo.source}" target="_blank" rel="noreferrer">${photo.credit} ↗</a></figcaption>
       </figure>
     `).join('')}
   </div>`;
+
+const renderPlaceContext = (place) => (
+  place.history || place.culture
+) ? `
+  <div class="place-context">
+    ${place.history ? `<section><span>History</span><p>${place.history}</p></section>` : ''}
+    ${place.culture ? `<section><span>Culture</span><p>${place.culture}</p></section>` : ''}
+  </div>` : '';
 
 const renderMap = (place) => `
   <div class="map-card">
@@ -408,6 +463,7 @@ const renderPlace = (place, index) => `
     ${place.address ? `<p class="address">${place.address}</p>` : ''}
     <p class="place-description">${place.description}</p>
     <ul class="tip-list">${place.tips.map((tip) => `<li>${tip}</li>`).join('')}</ul>
+    ${renderPlaceContext(place)}
     ${renderPhotos(place.photos)}
     ${renderMap(place)}
     <div class="source-actions">
