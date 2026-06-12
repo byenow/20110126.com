@@ -177,8 +177,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--highlight); out
 .day-title p { margin: 0 0 10px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .day-title h2 { margin: 0; font: 700 clamp(32px, 5vw, 56px)/1.08 var(--display); letter-spacing: -.045em; }
 .weather-card { padding: 18px; border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); }
-.weather-card span, .weather-card strong, .weather-card p { display: block; }
-.weather-card span { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.weather-card strong, .weather-card p { display: block; }
+.weather-card span { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.weather-card span i { font-style: normal; }
+.weather-card .weather-svg { display: block; }
 .weather-card strong { margin-top: 7px; font-size: 24px; }
 .weather-card p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
 .weather-note { margin: 28px 0 0 130px; padding: 14px 18px; color: var(--muted); border-left: 3px solid var(--accent); background: var(--bg-soft); font-size: 13px; }
@@ -335,7 +337,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--highlight); out
   .tip-list { grid-template-columns: 1fr; }
   .place-context { grid-template-columns: 1fr; }
   .carousel-slide img { height: min(72vw, 430px); }
-  .trip-status { grid-template-columns: 1fr; gap: 14px; }
   .transit-link { grid-template-columns: auto 1fr; row-gap: 4px; }
   .transit-link-total { grid-column: 2; justify-self: start; }
   .map-card { grid-template-columns: 1fr; }
@@ -344,21 +345,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--highlight); out
   .footer-inner { grid-template-columns: 1fr; gap: 10px; text-align: left; }
   .footer-inner p:nth-child(2) { text-align: left; }
 }
-
-/* Trip status / countdown */
-.trip-status { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 14px 28px; margin-top: 22px; padding: 20px 24px; border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
-.trip-status-main { display: flex; flex-direction: column; gap: 5px; }
-.trip-status-main strong { font: 700 22px var(--display); letter-spacing: -.02em; color: var(--text); }
-.trip-status-main span { color: var(--muted); font-size: 13px; }
-.trip-progress { grid-column: 1 / -1; height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
-.trip-progress span { display: block; height: 100%; background: var(--accent); border-radius: 4px; transition: width .4s ease; }
-.trip-progress-marks { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-.trip-progress-marks a { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 0; border: 1px solid var(--line); border-radius: var(--radius); color: var(--muted); text-decoration: none; transition: border-color .2s ease, color .2s ease; }
-.trip-progress-marks a b { font: 700 15px var(--display); }
-.trip-progress-marks a i { font-size: 10px; font-style: normal; }
-.trip-progress-marks a:hover { border-color: var(--accent); color: var(--text); }
-.trip-progress-marks a.is-done { color: var(--text); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
-.trip-progress-marks a.is-now { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
 
 /* Today highlight */
 .day-section.is-today { position: relative; }

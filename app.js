@@ -830,6 +830,19 @@ const renderFlightDetail = (flight) => `
     <p class="flight-credit">机型、航站楼与时刻以 ANA App 当日通知为准 · 机图 <a href="${ANA767_PHOTO_SOURCE}" target="_blank" rel="noreferrer">${PHOTO_SOURCES.ana767} ↗</a></p>
   </article>`;
 
+const WEATHER_ICONS = {
+  Sun: '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/>',
+  Cloud: '<path d="M7 18.5a4 4 0 0 1-.6-7.96A5.5 5.5 0 0 1 17 9.6a3.45 3.45 0 0 1-.5 8.9H7z"/>',
+  Rain: '<path d="M7.5 15.5a4 4 0 0 1-.6-7.96A5.5 5.5 0 0 1 17.5 6.6a3.45 3.45 0 0 1-.5 8.9H7.5z"/><path d="M8.5 18.5l-1 2.5M12 18.5l-1 2.5M15.5 18.5l-1 2.5"/>',
+  Storm: '<path d="M7.5 14.5a4 4 0 0 1-.6-7.96A5.5 5.5 0 0 1 17.5 5.6a3.45 3.45 0 0 1-.5 8.9H7.5z"/><path d="M12.5 14.5l-2.4 3.4h2.2l-1 3.6 3.7-4.6h-2.3z" fill="currentColor" stroke="none"/>',
+  Mountain: '<path d="M2.5 20.5l6.2-10.6 3.4 5 2.6-3.8 6.8 9.4z"/><path d="M8.7 9.9l1.7 2.9-1.7 1.6-1.6-1.6z" fill="currentColor" stroke="none"/>',
+};
+
+const weatherIcon = (type) => `
+  <svg class="weather-svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="${type}">
+    ${WEATHER_ICONS[type] || WEATHER_ICONS.Cloud}
+  </svg>`;
+
 const renderDay = (day, index) => {
   const status = tripStatus();
   const isToday = status.phase === 'during' && status.dayId === day.id;
@@ -843,7 +856,7 @@ const renderDay = (day, index) => {
         <h2>${day.title}</h2>
       </div>
       <div class="weather-card">
-        <span>${day.weather.icon}</span>
+        <span>${weatherIcon(day.weather.icon)}<i>${day.weather.icon}</i></span>
         <strong>${day.weather.temp}</strong>
         <p>${day.weather.text}</p>
       </div>
@@ -869,43 +882,9 @@ const renderDay = (day, index) => {
   </section>`;
 };
 
-const renderTripStatus = () => {
-  const s = tripStatus();
-  let main;
-  let sub;
-  if (s.phase === 'before') {
-    main = s.daysLeft <= 0 ? '明天出发' : `还有 ${s.daysLeft} 天出发`;
-    sub = '出发前 24 小时再核对一次航站楼、营业时间与天气';
-  } else if (s.phase === 'during') {
-    main = `行程进行中 · Day ${s.dayNumber} / 5`;
-    sub = '下方当天已高亮，进行中的时段带有标记';
-  } else {
-    main = '行程已结束';
-    sub = '回家啦，期待下一次东京';
-  }
-  const done = s.phase === 'after' ? 5 : s.phase === 'during' ? s.dayNumber : 0;
-  return `
-  <div class="trip-status trip-status-${s.phase}" data-trip-status>
-    <div class="trip-status-main">
-      <strong data-countdown>${main}</strong>
-      <span>${sub}</span>
-    </div>
-    <div class="trip-progress" aria-hidden="true"><span style="width:${(done / 5) * 100}%"></span></div>
-    <div class="trip-progress-marks">
-      ${TRIP_DAY_IDS.map((id, i) => {
-        const state = s.phase === 'during' && s.dayNumber === i + 1
-          ? 'is-now'
-          : (i + 1 <= done ? 'is-done' : '');
-        return `<a href="#${id}" class="${state}"><b>${['18', '19', '20', '21', '22'][i]}</b><i>${['四', '五', '六', '日', '一'][i]}</i></a>`;
-      }).join('')}
-    </div>
-  </div>`;
-};
-
 const renderOverview = () => `
   <section class="overview section-anchor" id="overview" data-nav-section>
     <div class="section-label">Trip Overview</div>
-    ${renderTripStatus()}
     <div class="overview-heading">
       <h2>五天，七个东京片区，<br>再加一日山水。</h2>
       <p>以预约项目为锚点，把美术馆、街区、购物和爵士夜串成顺路动线。KITTE 与 Alpen 是体力不足时最先删除的项目。</p>
@@ -1078,17 +1057,4 @@ document.querySelectorAll('[data-carousel]').forEach((car) => {
   });
 });
 
-const countdownEl = document.querySelector('[data-countdown]');
-if (countdownEl) {
-  setInterval(() => {
-    const s = tripStatus();
-    if (s.phase === 'before') {
-      countdownEl.textContent = s.daysLeft <= 0 ? '明天出发' : `还有 ${s.daysLeft} 天出发`;
-    } else if (s.phase === 'during') {
-      countdownEl.textContent = `行程进行中 · Day ${s.dayNumber} / 5`;
-    } else {
-      countdownEl.textContent = '行程已结束';
-    }
-  }, 60000);
-}
 
