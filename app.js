@@ -67,25 +67,61 @@ const trip = {
       weather: { icon: 'Rain', temp: '20—24°C', text: '预计有雨', note: '穿防水鞋，随身带折叠伞。若入境延误，直接取消 KITTE。' },
       timeline: [
         ['08:20—12:55', 'NH964 北京首都 → 东京羽田', '航班已定'],
-        ['13:00—15:00', '入境、取行李、进城', '预留缓冲'],
-        ['15:00—16:00', 'VIA INN Prime 赤坂入住、休整', '住宿'],
-        ['16:30 后', 'KITTE 丸之内、东京站夜景与晚餐', '可选'],
+        ['13:00—14:30', '入境、取行李、进城', '预留缓冲'],
+        ['14:30—15:00', '東京油組総本店 赤坂見附组', '到达午饭'],
+        ['15:15—16:00', 'VIA INN Prime 赤坂入住、休整', '住宿'],
+        ['16:30 后', 'KITTE 丸之内、东京站夜景', '可选'],
+        ['18:30 后', '魚がし日本一 八重洲（立食寿司）', '晚饭'],
       ],
-      intro: '抵达日不安排刚性项目。先完成入住、补水和充电，再根据天气与体力决定是否去丸之内。',
-      transit: '羽田前往酒店可选京急线经新桥换乘，或东京单轨电车经滨松町换乘。带大件行李时按当日导航选择换乘更少的一条，预计 45—60 分钟。',
+      intro: '抵达日不排刚性项目。落地后在赤坂见附下车吃碗油そば当午饭，再去酒店办入住、补水充电；傍晚视天气与体力决定要不要去丸之内，晚饭在东京站旁的立食寿司快速解决。',
+      transit: '羽田前往酒店一条自然动线：京急/浅草线到新桥，换银座线到赤坂见附（到酒店前最后一站，步行约 5 分钟）。带大件行李时按当日导航选换乘更少的一条，预计 45—60 分钟。',
       notices: [
         { type: 'info', title: '交通提示', text: 'Suica/PASMO 可覆盖本次东京市内的大部分交通；羽田到达口以 ANA 当日通知为准。' },
       ],
       places: [
         {
+          name: '東京油組総本店 赤坂見附组',
+          kicker: '14:30 · Abura-soba',
+          status: 'optional',
+          statusText: '到达午饭',
+          description: '赤坂见附站旁的油そば（无汤拌面）专门店，落地进城顺路、出餐快，适合当抵达日的第一顿。基本款是「油そば」，按口味加スペシャルトッピングA（葱、芝麻、溏心蛋）。',
+          history: '油そば（无汤拌面）相传源自上世纪 50 年代东京武藏野一带的学生食堂，比拉面更早在关东高校圈流行；東京油組総本店把它做成连锁专门店，推广到都心各站前。',
+          culture: '吃油そば的乐趣在于自己调味：先淋醋和辣油把面拌开，再用葱、芝麻和溏心蛋调节口感，是一种比拉面更随性、更「自己动手」的东京快食文化。',
+          restaurant: {
+            meal: '到达午饭 · 油そば',
+            tabelog: '3.19',
+            reviews: '食べログ',
+            priceJpy: '约 ¥900–1,100',
+            priceCny: '约 ¥38–47',
+            signature: ['油そば（招牌拌面）', 'スペシャルトッピングA（葱·芝麻·溏心蛋）', '加面免费（要在吃前告知）'],
+            booking: '无需预约，现场排队即可；营业 11:00 起。人均与评分以食べログ当日为准。',
+          },
+          tips: ['赤坂见附站旁，去酒店前顺路。', '吃完拌面再步行到 VIA INN Prime 赤坂办入住。'],
+          coordinates: [35.6770, 139.7370],
+          mapQuery: '東京油組総本店 赤坂見附組',
+          website: 'https://www.aburasoba.com/',
+          photos: [
+            { src: 'assets/aburasoba.jpg', alt: '油そば（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Abura_soba_01.jpg' },
+            { src: 'assets/aburasoba-2.jpg', alt: '油そば拌开后（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Abura_soba_02.jpg' },
+            { src: commonsFile('Abura_soba_01.jpg'), alt: '油そば（无汤拌面）特写', credit: PHOTO_SOURCES.commons, source: commonsPage('Abura_soba_01.jpg') },
+          ],
+        },
+        {
           name: 'KITTE 丸之内',
           kicker: 'Optional · 1.5—2 hours',
           status: 'optional',
           statusText: '可删减',
-          description: '从 JP Tower 商场空间一路逛到屋顶花园，看东京站丸之内站舍亮灯。晚餐可在 KITTE 或东京站一带解决。',
+          description: '从 JP Tower 商场空间一路逛到屋顶花园，看东京站丸之内站舍亮灯。逛完直接步行去八重洲一带吃晚饭。',
           history: 'KITTE 所在的 JP Tower 改建自旧东京中央邮便局用地，保留近代邮政建筑立面，与 1914 年开业的东京站丸之内站舍共同构成丸之内的城市门户。',
           culture: '这里把邮政、商业、办公和公共屋顶庭园放在同一栋楼里，适合把东京的“上班族城市”和观光地东京站放在同一个视角里看。',
-          tips: ['若 17:30 后才从酒店出发，建议跳过。', '赤坂/赤坂见附前往东京站或二重桥前，再步行。'],
+          transit: {
+            total: '约 18 分',
+            legs: [
+              { mode: 'metro', code: 'G', color: '#FF9500', name: '银座线', from: '赤坂见附', to: '新桥' },
+              { mode: 'walk', time: '约 9 分', dist: '酒店休整后出发' },
+            ],
+          },
+          tips: ['若 17:30 后才从酒店出发，建议跳过。', '赤坂见附经新桥/银座到东京站一带，再步行。'],
           coordinates: [35.6798593, 139.7647819],
           mapQuery: 'KITTE Marunouchi',
           website: 'https://marunouchi.jp-kitte.jp/gb/',
@@ -95,6 +131,39 @@ const trip = {
             { src: commonsFile('Tokyo_Station_Marunouchi_Building_P5228787.jpg'), alt: '丸之内一带的东京站景观', credit: PHOTO_SOURCES.commons, source: commonsPage('Tokyo_Station_Marunouchi_Building_P5228787.jpg') },
           ],
         },
+        {
+          name: '魚がし日本一 八重洲仲通り店',
+          kicker: '18:30 后 · Standing Sushi',
+          status: 'optional',
+          statusText: '晚饭',
+          description: '东京站八重洲一侧的立食（站着吃）寿司，连锁老牌，胜在新鲜、快、便宜。逛完 KITTE 穿过东京站到八重洲仲通即可，按贯单点，不用久坐。',
+          history: '立食寿司是战后东京为上班族和市场工人发展出的快食形态，魚がし日本一以筑地直送、按贯现点的连锁模式，把平价江户前寿司带到各车站周边。',
+          culture: '站着吃寿司讲究节奏：师傅现捏、客人现吃，几贯之间快速解决一餐，是东京通勤生活里把「好鱼」和「快」结合在一起的市井饮食方式。',
+          restaurant: {
+            meal: '晚饭 · 立食寿司',
+            tabelog: '3.4+',
+            reviews: '食べログ',
+            priceJpy: '约 ¥2,000',
+            priceCny: '约 ¥85',
+            signature: ['当日筑地直送握寿司（1 贯 ¥75 起）', '本鲔·光物·穴子', '站着吃，人均约 ¥2,000'],
+            booking: '无需预约，现场排队；为连锁分店，建议按当日导航就近选店。价格随时价浮动。',
+          },
+          tips: ['从 KITTE/东京站穿到八重洲仲通约 4—6 分钟。', '站着吃节奏快，吃完早点回赤坂休息。'],
+          coordinates: [35.6810, 139.7706],
+          mapQuery: '魚がし日本一 八重洲仲通り店',
+          website: 'https://www.uogashinihonichi.com/',
+          transit: {
+            total: '约 6 分',
+            legs: [
+              { mode: 'walk', time: '约 6 分', dist: '穿过东京站到八重洲 · 约 450 m' },
+            ],
+          },
+          photos: [
+            { src: 'assets/nigiri.jpg', alt: '握寿司拼盘（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Nigiri_Moriawase_(Sushi_Sei)_(42217840971).jpg' },
+            { src: 'assets/nigiri-2.jpg', alt: '本鲔握寿司（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Tuna_nigiri_sushi_-_Sushiko_(2648979899).jpg' },
+            { src: commonsFile('Nigiri_Moriawase_(Sushi_Sei)_(42217840971).jpg'), alt: '握寿司拼盘（示意）', credit: PHOTO_SOURCES.commons, source: commonsPage('Nigiri_Moriawase_(Sushi_Sei)_(42217840971).jpg') },
+          ],
+        },
       ],
     },
     {
@@ -102,7 +171,7 @@ const trip = {
       date: '6.19',
       weekday: 'FRI',
       title: '建筑、寿司与一部长电影',
-      area: '上野 · 麻布台 · 池袋 · 新宿',
+      area: '上野 · 麻布台 · 池袋 · 原宿 · 新宿',
       weather: { icon: 'Cloud', temp: '21—27°C', text: '多云、湿度较高', note: '预约最密集的一天。上午美术馆务必控制离馆时间。' },
       timeline: [
         ['09:20—11:00', '国立西洋美术馆', '建议 90 分钟'],
@@ -110,10 +179,14 @@ const trip = {
         ['12:30', '鮨麻布 東京', '已预约'],
         ['14:10—15:25', '麻布台 → 池袋', '提前入场'],
         ['15:45', '新文芸坐《一一》', '已预约'],
-        ['电影后', 'Alpen TOKYO', '可选'],
+        ['电影后', 'BEAMS 原宿（趁 20:00 前）', '可选·购物'],
+        ['BEAMS 后', 'Alpen TOKYO 新宿', '可选·营业较晚'],
       ],
-      intro: '12:30 的午餐和 15:45 的电影是当天两枚固定锚点。上午 11:00 准时离馆，午餐后直接前往池袋。',
-      transit: '酒店搭地铁前往上野；上野转往神谷町或六本木一丁目；麻布台午餐后前往池袋。电影结束后再决定是否去新宿。',
+      intro: '12:30 的午餐和 15:45 的电影是当天两枚固定锚点。上午 11:00 准时离馆，午餐后直接前往池袋。散场后若还有体力，把离得很近的 BEAMS 原宿与 Alpen 新宿一起逛掉——先赶 BEAMS（20:00 关门），再去营业更晚的 Alpen。',
+      transit: '酒店搭地铁前往上野；上野转往神谷町或六本木一丁目；麻布台午餐后前往池袋。电影散场后沿 JR 山手线先到原宿、再回新宿，两点都在山手线西侧、彼此约 4 分钟。',
+      notices: [
+        { type: 'warning', title: '散场后购物有时限', text: '《一一》约 3 小时，15:45 场约 18:40—19:00 散场。BEAMS 原宿一般 20:00 关门，要先去；Alpen 营业较晚可放后面。体力不足时两者都可直接删减，回赤坂休息。' },
+      ],
       places: [
         {
           name: '国立西洋美术馆',
@@ -138,6 +211,13 @@ const trip = {
           status: 'booked',
           statusText: '已预约',
           address: '日本〒106-0041 Tokyo, Minato City, Azabudai, 1 Chome−3−1 3F',
+          transit: {
+            total: '约 20 分',
+            legs: [
+              { mode: 'metro', code: 'H', color: '#B5B5AC', name: '日比谷线', from: '上野', to: '神谷町' },
+              { mode: 'walk', time: '约 6 分', dist: '上行至麻布台' },
+            ],
+          },
           description: '按厨师节奏享用 omakase。建议 12:15 前抵达所在楼层，用餐结束后不再加排项目，直接去池袋。',
           history: '鮨麻布源自纽约同名寿司店的东京分店，落在近年更新完成的麻布台 Hills 区域，体现东京高端餐饮从银座、六本木向复合街区扩散的趋势。',
           culture: 'Omakase 的重点不只是“吃到什么”，也包括入座节奏、师傅手部动作、米饭温度和当季鱼料的顺序；午餐时段更适合把体验控制在旅行节奏内。',
@@ -156,6 +236,13 @@ const trip = {
           kicker: '15:45 · Cinema',
           status: 'booked',
           statusText: '已预约',
+          transit: {
+            total: '约 30 分',
+            legs: [
+              { mode: 'metro', code: 'H', color: '#B5B5AC', name: '日比谷线', from: '神谷町', to: '银座' },
+              { mode: 'metro', code: 'M', color: '#F62E36', name: '丸之内线', from: '银座', to: '池袋' },
+            ],
+          },
           description: '《一一》片长较长，入场前先补水并去洗手间。观影结束后不安排必须完成的项目，保留恢复体力的空间。',
           history: '新文芸坐延续池袋文艺坐的名画座传统，长期以经典片、导演回顾和双片连映连接电影资料馆与大众放映文化。',
           culture: '名画座是东京影迷文化的重要组成：观众不是为最新商业片而来，而是为大银幕、胶片记忆、专题策展和影史中的“再相遇”。',
@@ -171,14 +258,44 @@ const trip = {
           ],
         },
         {
-          name: 'Alpen TOKYO',
-          kicker: 'After cinema · Sports retail',
+          name: 'BEAMS 原宿本店',
+          kicker: '电影后 · Japanese Fashion',
           status: 'optional',
           statusText: '可删减',
-          description: '按楼层集中看户外、跑步、球类和日系运动品牌。只有电影结束后仍有体力时才前往，建议停留 60—90 分钟。',
+          transit: {
+            total: '约 7 分',
+            legs: [
+              { mode: 'jr', code: 'JY', color: '#9ACD32', name: 'JR 山手线', from: '池袋', to: '原宿' },
+            ],
+          },
+          description: '电影散场后从池袋沿山手线下来，重点看店铺限定、联名和日本企划，控制在 45—60 分钟。它和 Alpen 离得很近，所以并到这天一起逛；先来 BEAMS 是因为它约 20:00 关门，逛完再往回到新宿的 Alpen。',
+          history: 'BEAMS 1976 年创立于原宿，从美国休闲服饰买手店发展成覆盖服装、杂货、唱片、艺术合作的日本生活方式品牌。',
+          culture: '原宿本店适合看日本“编辑型零售”的能力：店铺把品牌、杂志感、音乐、街头文化和地方工艺组合成一种可购买的生活风格。',
+          tips: ['约 20:00 关门，散场后优先来这。', '逛完沿山手线回新宿接 Alpen，营业以官网为准。'],
+          coordinates: [35.6716426, 139.7083459],
+          mapQuery: 'BEAMS Harajuku',
+          website: 'https://www.beams.co.jp/shop/h/',
+          photos: [
+            { src: 'assets/beams-exterior.jpg', alt: 'BEAMS 原宿店外观', credit: PHOTO_SOURCES.beams, source: 'https://www.beams.co.jp/shop/h/' },
+            { src: 'assets/beams-interior.jpg', alt: 'BEAMS 原宿店空间', credit: PHOTO_SOURCES.beams, source: 'https://www.beams.co.jp/shop/h/' },
+            { src: commonsFile('Takeshita_Street,_Harajuku,_Tokyo.jpg'), alt: 'BEAMS 所在的原宿街区氛围', credit: PHOTO_SOURCES.commons, source: commonsPage('Takeshita_Street,_Harajuku,_Tokyo.jpg') },
+          ],
+        },
+        {
+          name: 'Alpen TOKYO',
+          kicker: 'BEAMS 后 · Sports retail',
+          status: 'optional',
+          statusText: '可删减',
+          transit: {
+            total: '约 4 分',
+            legs: [
+              { mode: 'jr', code: 'JY', color: '#9ACD32', name: 'JR 山手线', from: '原宿', to: '新宿' },
+            ],
+          },
+          description: '从原宿回到新宿，按楼层集中看户外、跑步、球类和日系运动品牌。营业较晚，适合放在 BEAMS 之后收尾；只有电影后仍有体力时才前往，建议停留 60—90 分钟。',
           history: 'Alpen 源自日本大型体育零售体系，新宿旗舰店集合 Sport Depo、Alpen Outdoors 与 Golf5 等业态，是近年大型垂直零售回到市中心的代表。',
           culture: '东京的运动用品店常兼具“购买”和“看日本企划”的意义：配色、联名、户外小物和跑步装备都能反映本地生活方式审美。',
-          tips: ['与 KITTE 同属可删减项目。', '疲劳时直接返回赤坂。'],
+          tips: ['营业较晚，放在 BEAMS 之后。', '疲劳时直接返回赤坂。'],
           coordinates: [35.6934557, 139.7008272],
           mapQuery: 'Alpen TOKYO Shinjuku',
           website: 'https://store.alpen-group.jp/Form/RealShop/ShopDetail.aspx?rsid=5200',
@@ -194,21 +311,22 @@ const trip = {
       id: 'day-620',
       date: '6.20',
       weekday: 'SAT',
-      title: '庭园、书店、街区与爵士夜',
-      area: '青山 · 神保町 · 原宿 · 下北泽 · 吉祥寺',
-      weather: { icon: 'Storm', temp: '20—26°C', text: '午后可能有较强阵雨', note: '书店和商场可作为避雨点。天气恶化时优先保留根津、神保町和 SOMETIME。' },
+      title: '庭园、街区、古着与爵士夜',
+      area: '青山 · 下北泽 · 吉祥寺',
+      weather: { icon: 'Storm', temp: '20—26°C', text: '午后可能有较强阵雨', note: '商场与商店街可作避雨点。天气恶化时优先保留根津、金子屋与 SOMETIME。' },
       timeline: [
         ['10:00—11:30', '根津美术馆', '已预约'],
-        ['12:10—14:10', '神保町', '书店与午餐'],
-        ['14:40—15:40', 'BEAMS 原宿本店', '购物'],
-        ['16:10—17:50', '下北泽', '街区散步'],
-        ['18:00—18:45', '井之头线前往吉祥寺', '转场'],
-        ['19:00', 'SOMETIME Jazz Bar', '尚未预约'],
+        ['11:45—12:45', '表参道 / 青山一带午餐', '午餐'],
+        ['13:30—15:00', '下北泽（古着/唱片）', '街区散步'],
+        ['15:15 起', '吉祥寺 · 井之头公园 + 商店街', '从容逛'],
+        ['17:30', '金子屋（天丼/天ぷらめし）', '早晚饭'],
+        ['19:00', 'SOMETIME 吉祥寺', '尚未预约'],
       ],
-      intro: '当天跨度最大，但地铁与私铁衔接顺畅。不要在单一街区逗留过久，18:30 前抵达吉祥寺。',
-      transit: '表参道搭半藏门线直达神保町；神保町返回表参道/原宿；从明治神宫前经代代木上原前往下北泽，再搭京王井之头线去吉祥寺。',
+      intro: '重排成一条向西的动线：上午根津，表参道一带午餐后经下北泽一路向西到吉祥寺，傍晚在金子屋吃早晚饭，再去 SOMETIME 听爵士。不动任何已预约项；BEAMS 原宿与 Alpen 离得近，已并到 6/19 一起逛，神保町因不顺路移到下方「待定区」。',
+      transit: '表参道经千代田线到代代木上原，换小田急前往下北泽；下北泽搭京王井之头线一路到吉祥寺，金子屋与 SOMETIME 都在吉祥寺商店街内步行可达。',
       notices: [
-        { type: 'warning', title: '未预约', text: 'SOMETIME 尚未预约，建议尽快联系店方确认 6/20 席位。' },
+        { type: 'warning', title: '未预约', text: 'SOMETIME 尚未预约，建议尽快联系店方确认 6/20 席位。金子屋营业到约 20:30，17:30 入座来得及衔接 19:00 演出。' },
+        { type: 'info', title: '神保町已移出', text: '神保町不在本日西向动线上，已移到下方「待定区」，机动时再单独安排半天。' },
       ],
       places: [
         {
@@ -230,44 +348,19 @@ const trip = {
           ],
         },
         {
-          name: '神保町',
-          kicker: '12:10 · Books & Curry',
-          description: '沿靖国通从三省堂周边向古书街慢走，按兴趣挑文学、设计、电影或摄影书店。午餐选神保町咖喱，再用老派喫茶店收尾。',
-          history: '神保町因明治大学、专修大学等学校与出版社聚集而发展成古书街，关东大地震和战后重建后仍保留大量书店、出版社和印刷相关行业。',
-          culture: '这里的逛法不是“买一本书”这么简单，而是进入东京的纸本文化：绝版书、电影海报、摄影集、学术旧书、咖喱店和喫茶店彼此相邻。',
-          tips: ['不要设过多必去店，集中逛 2—3 家。', '14:10 左右离开。'],
-          coordinates: [35.6950136, 139.7583761],
-          mapQuery: 'Jimbocho Book Town',
-          website: 'https://visit-chiyoda.tokyo/en/experience/',
-          photos: [
-            { src: 'assets/jimbocho-books.jpg', alt: '神保町古书店', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Used_bookstore_in_Jinb%C5%8Dch%C5%8D_001.jpg' },
-            { src: 'assets/jimbocho-street.jpg', alt: '神保町书店街', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Sanseido_bookstore_kanda-jimbocho_Oct_15_2021_various.jpeg' },
-            { src: commonsFile('Used_bookstore_in_Jinbōchō_001.jpg'), alt: '神保町街角的古书店铺面', credit: PHOTO_SOURCES.commons, source: commonsPage('Used_bookstore_in_Jinbōchō_001.jpg') },
-          ],
-        },
-        {
-          name: 'BEAMS 原宿本店',
-          kicker: '14:40 · Japanese Fashion',
-          description: '重点看店铺限定、联名和日本企划，控制在 45—60 分钟。购物后从明治神宫前或代代木上原方向前往下北泽。',
-          history: 'BEAMS 1976 年创立于原宿，从美国休闲服饰买手店发展成覆盖服装、杂货、唱片、艺术合作的日本生活方式品牌。',
-          culture: '原宿本店适合看日本“编辑型零售”的能力：店铺把品牌、杂志感、音乐、街头文化和地方工艺组合成一种可购买的生活风格。',
-          tips: ['优先看限定与联名。', '不要在周边继续扩展购物路线。'],
-          coordinates: [35.6716426, 139.7083459],
-          mapQuery: 'BEAMS Harajuku',
-          website: 'https://www.beams.co.jp/shop/h/',
-          photos: [
-            { src: 'assets/beams-exterior.jpg', alt: 'BEAMS 原宿店外观', credit: PHOTO_SOURCES.beams, source: 'https://www.beams.co.jp/shop/h/' },
-            { src: 'assets/beams-interior.jpg', alt: 'BEAMS 原宿店空间', credit: PHOTO_SOURCES.beams, source: 'https://www.beams.co.jp/shop/h/' },
-            { src: commonsFile('Takeshita_Street,_Harajuku,_Tokyo.jpg'), alt: 'BEAMS 所在的原宿街区氛围', credit: PHOTO_SOURCES.commons, source: commonsPage('Takeshita_Street,_Harajuku,_Tokyo.jpg') },
-          ],
-        },
-        {
           name: '下北泽',
-          kicker: '16:10 · Vintage & Records',
-          description: '以车站为中心走 Bonus Track、reload 一带，再按兴趣进入古着店、独立唱片店和咖啡馆。给 90 分钟，不要为了打卡绕远。',
+          kicker: '13:30 · Vintage & Records',
+          transit: {
+            total: '约 12 分',
+            legs: [
+              { mode: 'metro', code: 'C', color: '#00BB85', name: '千代田线', from: '表参道', to: '代代木上原' },
+              { mode: 'rail', code: 'OH', color: '#2581C4', name: '小田急线', from: '代代木上原', to: '下北泽' },
+            ],
+          },
+          description: '根津所在的表参道一带午餐后过来，以车站为中心走 Bonus Track、reload 一带，再按兴趣进入古着店、独立唱片店和咖啡馆。给 90 分钟，不要为了打卡绕远。',
           history: '下北泽在战后形成小剧场、Live House、古着和独立店铺混杂的街区性格；小田急线地下化后，车站周边又出现 reload、Bonus Track 等新空间。',
           culture: '这里不像银座或表参道那样强调整齐品牌门面，而更像东京青年文化的拼贴：二手衣、唱片、小剧场、咖啡和窄巷散步共同构成气氛。',
-          tips: ['17:50 左右回到下北泽站。', '搭京王井之头线前往吉祥寺。'],
+          tips: ['15:00 左右回到下北泽站。', '搭京王井之头线前往吉祥寺。'],
           coordinates: [35.6615657, 139.6670604],
           mapQuery: 'Shimokitazawa Tokyo',
           website: 'https://www.gotokyo.org/en/destinations/western-tokyo/shimokitazawa/index.html',
@@ -278,10 +371,71 @@ const trip = {
           ],
         },
         {
+          name: '吉祥寺 · 井之头公园',
+          kicker: '15:15 · Park & Sunroad',
+          transit: {
+            total: '约 16 分',
+            legs: [
+              { mode: 'rail', code: 'IN', color: '#0079C2', name: '京王 井之头线', from: '下北泽', to: '吉祥寺' },
+            ],
+          },
+          description: '一路向西到吉祥寺，先到井之头公园绕池一圈，再回到 SUNROAD、ダイヤ街等商店街从容逛。这一段是当天最松弛的部分，给金子屋和爵士留足体力。',
+          history: '井之头公园 1917 年作为日本最早的郊外型「恩赐公园」之一开园，以井之头池为中心；战后吉祥寺在中央线沿线发展成住宅与商业兼具的人气街区，公园与 SUNROAD 商店街相邻共生。',
+          culture: '吉祥寺常年位居「东京最想居住街区」前列，公园划船、池畔散步与商店街的杂货、咖啡、唱片店组成一种松弛的中央线生活方式，也是许多动漫与文学作品的取景地。',
+          tips: ['公园与商店街之间步行几分钟。', '雨大时以商店街拱廊为主。'],
+          coordinates: [35.7000, 139.5803],
+          mapQuery: 'Inokashira Park Kichijoji',
+          website: 'https://www.gotokyo.org/en/destinations/western-tokyo/kichijoji/index.html',
+          photos: [
+            { src: 'assets/kichijoji-inokashira.jpg', alt: '井之头公园池畔', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Inokashira_park_pond_2024.jpg' },
+            { src: 'assets/kichijoji-sunroad.jpg', alt: '吉祥寺 SUNROAD 商店街', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Gate_of_the_Kichijoji_Sunroad_at_Night.jpg' },
+            { src: commonsFile('Inokashira_park_pond_2024.jpg'), alt: '井之头公园池畔景观', credit: PHOTO_SOURCES.commons, source: commonsPage('Inokashira_park_pond_2024.jpg') },
+          ],
+        },
+        {
+          name: '金子屋 吉祥寺店',
+          kicker: '17:30 · Tendon & Tempura',
+          status: 'optional',
+          statusText: '早晚饭',
+          transit: {
+            total: '约 6 分',
+            legs: [
+              { mode: 'walk', time: '约 6 分', dist: '公园回商店街 · 约 500 m' },
+            ],
+          },
+          description: '吉祥寺的天丼/天ぷらめし名店，把当天「早晚饭」放在这里，吃完正好步行去 SOMETIME 听爵士。招牌是穴子天丼「松」，每日限定 20 份的大海老天丼很值得拼。',
+          history: '天丼（天ぷら盖饭）源自江户前天妇罗，把炸好的食材浇上甜咸酱汁盖在米饭上，是平民化的江户食物；金子屋把这一传统做成吉祥寺商店街里的人气名店。',
+          culture: '比起正襟危坐的天妇罗专门店，天丼更像市井日常美食：一碗饭配穴子或大海老天，酱汁渗进米饭，是吉祥寺逛街途中实惠又满足的一餐。',
+          restaurant: {
+            meal: '早晚饭 · 天丼/天ぷらめし',
+            tabelog: '3.49',
+            reviews: '食べログ',
+            priceJpy: '约 ¥1,500',
+            priceCny: '约 ¥63',
+            signature: ['天丼「松」（穴子）', '限定 20 份 · 大海老天丼', '天ぷらめし'],
+            booking: '建议早点到避开排队；营业到约 20:30。招牌、限定与营业时间以食べログ/店方当日为准。',
+          },
+          tips: ['17:30 前后入座，衔接 19:00 演出。', '限定大海老天丼售完即止，想吃要趁早。'],
+          coordinates: [35.7038, 139.5796],
+          mapQuery: '金子屋 吉祥寺',
+          website: 'https://tabelog.com/tokyo/A1320/A132001/13001151/',
+          photos: [
+            { src: 'assets/tendon.jpg', alt: '天丼（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Tendon.jpg' },
+            { src: 'assets/tendon-2.jpg', alt: '大海老天丼（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Rice_bowl_topped_with_shrimp_tempura_(8281030764).jpg' },
+            { src: commonsFile('Tendon.jpg'), alt: '天丼（天ぷら盖饭，示意）', credit: PHOTO_SOURCES.commons, source: commonsPage('Tendon.jpg') },
+          ],
+        },
+        {
           name: 'SOMETIME 吉祥寺',
           kicker: '19:00 · Jazz Night',
           status: 'unbooked',
           statusText: '尚未预约',
+          transit: {
+            total: '约 4 分',
+            legs: [
+              { mode: 'walk', time: '约 4 分', dist: '商店街内 · 约 300 m' },
+            ],
+          },
           description: '按当前演出表，6/20 晚为 YOSHIAKI MASUO Bossa Animada Trio，费用约 ¥4,000，另需至少点一项餐饮。实际阵容与规则以店方回复为准。',
           history: 'SOMETIME 是吉祥寺老牌爵士现场空间，长期承接日本本地乐手、小编制组合和近距离演出，是中央线沿线音乐文化的一部分。',
           culture: '吉祥寺的爵士夜和白天的井之头公园、商店街气质相连：不追求大型舞台，而是把音乐放回日常餐饮、邻里和小空间的距离里。',
@@ -415,6 +569,104 @@ const trip = {
       ],
     },
   ],
+  pending: [
+    {
+      name: '神保町',
+      kicker: 'On Hold · Books & Curry',
+      status: 'unbooked',
+      statusText: '待定',
+      description: '世界最大的古书街，原计划 6/20 午间安排，但它在本次西向动线之外、单独绕路成本高，所以移到待定区。等机动半天时再单独去：沿靖国通逛 2—3 家书店，午餐吃一碗神保町咖喱，再用老派喫茶收尾。',
+      history: '神保町因明治大学、专修大学等学校与出版社聚集而发展成古书街，关东大地震和战后重建后仍保留大量书店、出版社和印刷相关行业。',
+      culture: '这里的逛法不是「买一本书」这么简单，而是进入东京的纸本文化：绝版书、电影海报、摄影集、学术旧书、咖喱店和喫茶店彼此相邻。',
+      tips: ['不顺路，建议单独安排半天，不要硬塞进 6/20。', '集中逛 2—3 家书店即可，营业以各店官网为准。'],
+      coordinates: [35.6950136, 139.7583761],
+      mapQuery: 'Jimbocho Book Town',
+      website: 'https://visit-chiyoda.tokyo/en/experience/',
+      photos: [
+        { src: 'assets/jimbocho-books.jpg', alt: '神保町古书店', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Used_bookstore_in_Jinb%C5%8Dch%C5%8D_001.jpg' },
+        { src: 'assets/jimbocho-street.jpg', alt: '神保町书店街', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Sanseido_bookstore_kanda-jimbocho_Oct_15_2021_various.jpeg' },
+        { src: commonsFile('Used_bookstore_in_Jinbōchō_001.jpg'), alt: '神保町街角的古书店铺面', credit: PHOTO_SOURCES.commons, source: commonsPage('Used_bookstore_in_Jinbōchō_001.jpg') },
+      ],
+    },
+  ],
+  explore: [
+    {
+      label: '美术馆 & 建筑',
+      items: [
+        { name: '21_21 DESIGN SIGHT', area: '六本木 · 东京中城', note: '安藤忠雄设计的清水混凝土设计馆，常做主题性企划展。', img: 'assets/ex-2121.jpg', alt: '21_21 DESIGN SIGHT 建筑', map: '21_21 DESIGN SIGHT Tokyo', source: 'https://commons.wikimedia.org/wiki/File:21_21_DESIGN_SIGHT.jpg' },
+        { name: '东京都庭园美术馆', area: '白金台', note: '旧朝香宫邸改成的 Art Deco 美术馆，建筑本身就值得看，带庭园。', img: 'assets/ex-teien.jpg', alt: '东京都庭园美术馆', map: 'Tokyo Metropolitan Teien Art Museum', source: 'https://commons.wikimedia.org/wiki/File:Tokyo_Metropolitan_Teien_Art_Museum_PB292588.jpg' },
+      ],
+    },
+    {
+      label: '书店 & 喫茶',
+      items: [
+        { name: '代官山 茑屋书店', area: '代官山 T-SITE', note: '森林中的书店建筑群，选书、杂志与咖啡都很舒服，可待一下午。', img: 'assets/ex-tsutaya.jpg', alt: '代官山茑屋书店', map: 'Daikanyama Tsutaya Books', source: 'https://commons.wikimedia.org/wiki/File:Tsutaya_Books_Daikanyama.jpg' },
+        { name: 'カヤバ珈琲', area: '谷中 · 上野樱木', note: '昭和老喫茶，鸡蛋三明治和早餐有名，配合谷中街区散步。', img: 'assets/ex-kayaba.jpg', alt: 'カヤバ珈琲外观', map: 'Kayaba Coffee Yanaka', source: 'https://commons.wikimedia.org/wiki/File:Kayaba_Coffee_by_Sansakisaka_Street_in_Ueno_Sakuragi,_Taito,_Tokyo,_Japan,_2024_May.jpg' },
+      ],
+    },
+    {
+      label: '古着 & 唱片',
+      items: [
+        { name: '高円寺', area: '高円寺', note: '东京古着大本营，沿高架与商店街密集分布古着店与小酒馆。', img: 'assets/ex-koenji.jpg', alt: '高円寺商店街', map: 'Koenji Tokyo', source: 'https://commons.wikimedia.org/wiki/File:Awa-odori_K%C5%8Denji_02.jpg' },
+        { name: 'Tower Records 涩谷', area: '涩谷', note: '标志性红黄唱片大楼，黑胶、CD 与现场活动；爱淘碟可以蹲一层。', img: 'assets/ex-tower.jpg', alt: 'Tower Records 唱片店', map: 'Tower Records Shibuya', source: 'https://commons.wikimedia.org/wiki/File:Tower_Records.jpg' },
+      ],
+    },
+    {
+      label: '咖啡 & 庭园',
+      items: [
+        { name: 'Blue Bottle 清澄白河', area: '清澄白河', note: '蓝瓶日本一号店所在的烘焙街区，和 6/22 的清澄庭园顺路。', img: 'assets/ex-bluebottle.jpg', alt: 'Blue Bottle 清澄白河', map: 'Blue Bottle Coffee Kiyosumi', source: 'https://commons.wikimedia.org/wiki/File:Bluebottlejapan-opening-outsidebuilding-feb8-2015.jpg' },
+        { name: '旧古河庭园', area: '西原 · 上中里', note: '西洋馆＋玫瑰园＋日本庭园的组合，初夏玫瑰季尤其好看。', img: 'assets/ex-furukawa.jpg', alt: '旧古河庭园', map: 'Kyu-Furukawa Gardens', source: 'https://commons.wikimedia.org/wiki/File:Kyu-Furukawa_Garden_@_Nishigahara_(11029178266).jpg' },
+      ],
+    },
+    {
+      label: '爵士 & 现场',
+      items: [
+        { name: 'Blue Note Tokyo', area: '南青山', note: '国际一线爵士/灵魂乐手的东京据点，正餐+演出，需提前订票。', img: 'assets/ex-bluenote.jpg', alt: 'Blue Note Tokyo', map: 'Blue Note Tokyo', source: 'https://commons.wikimedia.org/wiki/File:Blue_Note_(Tokyo).jpg' },
+        { name: '新宿 PIT INN', area: '新宿', note: '日本爵士现场老店，本土阵容为主，氛围硬核，票价亲民。', img: 'assets/ex-pitinn.jpg', alt: '新宿 PIT INN', map: 'Shinjuku Pit Inn', source: 'https://commons.wikimedia.org/wiki/File:Jazz_club_PIT_INN_-_lobby.jpg' },
+      ],
+    },
+    {
+      label: '经典美食',
+      items: [
+        { name: '浅草 天妇罗老铺', area: '浅草', note: '雷门一带集中了多家江户前天妇罗与鳗鱼老店，配合浅草寺散步。', img: 'assets/ex-asakusa.jpg', alt: '浅草天妇罗老铺', map: 'Asakusa tempura', source: 'https://commons.wikimedia.org/wiki/File:Tempura_restaurant_by_clanchou_in_Asakusa,_Tokyo.jpg' },
+        { name: '筑地场外市场', area: '筑地', note: '场外市场仍在营业，海鲜丼、玉子烧、刺身边走边吃，建议上午去。', img: 'assets/ex-tsukiji.jpg', alt: '筑地场外市场', map: 'Tsukiji Outer Market', source: 'https://commons.wikimedia.org/wiki/File:Tsukiji_Outer_Market_-04.jpg' },
+      ],
+    },
+  ],
+};
+
+const TRIP_DAY_IDS = ['day-618', 'day-619', 'day-620', 'day-621', 'day-622'];
+const TRIP_DAY_DATES = ['2026-06-18', '2026-06-19', '2026-06-20', '2026-06-21', '2026-06-22'];
+
+const tokyoNow = () => {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hour12: false,
+  }).formatToParts(new Date()).reduce((acc, p) => (acc[p.type] = p.value, acc), {});
+  return {
+    date: `${parts.year}-${parts.month}-${parts.day}`,
+    minutes: Number(parts.hour) * 60 + Number(parts.minute),
+  };
+};
+
+const tripStatus = () => {
+  const { date, minutes } = tokyoNow();
+  const todayIndex = TRIP_DAY_DATES.indexOf(date);
+  if (todayIndex >= 0) {
+    return { phase: 'during', dayNumber: todayIndex + 1, dayId: TRIP_DAY_IDS[todayIndex], minutes };
+  }
+  if (date < TRIP_DAY_DATES[0]) {
+    const start = Date.UTC(2026, 5, 18);
+    const [y, m, d] = date.split('-').map(Number);
+    const days = Math.round((start - Date.UTC(y, m - 1, d)) / 86400000);
+    return { phase: 'before', daysLeft: days };
+  }
+  return { phase: 'after' };
+};
+
+const parseStartMinutes = (timeStr) => {
+  const match = /(\d{1,2}):(\d{2})/.exec(timeStr);
+  return match ? Number(match[1]) * 60 + Number(match[2]) : null;
 };
 
 const statusBadge = (place) =>
@@ -422,14 +674,54 @@ const statusBadge = (place) =>
     ? `<span class="status status-${place.status}">${place.statusText}</span>`
     : '';
 
-const renderPhotos = (photos) => `
-  <div class="photo-grid ${photos.length === 1 ? 'photo-grid-single' : ''}">
-    ${photos.map((photo) => `
-      <figure>
-        <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" onerror="this.closest('figure').hidden = true">
-        <figcaption>${photo.alt} · <a href="${photo.source}" target="_blank" rel="noreferrer">${photo.credit} ↗</a></figcaption>
-      </figure>
-    `).join('')}
+const renderCarousel = (photos) => {
+  if (!photos || !photos.length) return '';
+  const multi = photos.length > 1;
+  return `
+  <div class="carousel${multi ? '' : ' is-single'}" data-carousel>
+    <div class="carousel-viewport">
+      <div class="carousel-track" data-carousel-track>
+        ${photos.map((photo, i) => `
+          <figure class="carousel-slide" data-index="${i}">
+            <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async">
+            <figcaption>${photo.alt} · <a href="${photo.source}" target="_blank" rel="noreferrer">${photo.credit} ↗</a></figcaption>
+          </figure>`).join('')}
+      </div>
+      ${multi ? `
+      <button type="button" class="carousel-arrow prev" data-carousel-prev aria-label="上一张">‹</button>
+      <button type="button" class="carousel-arrow next" data-carousel-next aria-label="下一张">›</button>` : ''}
+    </div>
+    ${multi ? `<div class="carousel-dots" data-carousel-dots>${photos.map((_, i) => `<button type="button" class="carousel-dot${i === 0 ? ' is-active' : ''}" data-carousel-go="${i}" aria-label="第 ${i + 1} 张图片"></button>`).join('')}</div>` : ''}
+  </div>`;
+};
+
+const lineMark = (leg) => {
+  if (leg.mode === 'walk') return '<span class="ln-walk" aria-hidden="true">人</span>';
+  const cls = leg.mode === 'jr' ? 'ln ln-jr' : 'ln';
+  return `<span class="${cls}" style="--ln:${leg.color}">${leg.code}</span>`;
+};
+
+const renderTransit = (transit) => {
+  if (!transit || !transit.legs || !transit.legs.length) return '';
+  return `
+  <div class="transit-link">
+    <span class="transit-link-marks">${transit.legs.map(lineMark).join('<span class="ln-sep">·</span>')}</span>
+    <span class="transit-link-body">${transit.legs.map((leg) => leg.mode === 'walk'
+      ? `<span class="tl-leg"><b>步行</b> ${leg.time}${leg.dist ? ` · ${leg.dist}` : ''}</span>`
+      : `<span class="tl-leg"><b>${leg.name}</b> ${leg.from}→${leg.to}</span>`).join('<span class="tl-dot">·</span>')}</span>
+    <span class="transit-link-total">${transit.total}</span>
+  </div>`;
+};
+
+const renderRestaurant = (r) => `
+  <div class="dine">
+    <div class="dine-meta">
+      <span class="dine-meal">${r.meal}</span>
+      <span class="dine-score"><b>★ ${r.tabelog}</b> Tabelog · ${r.reviews}</span>
+      <span class="dine-price">${r.priceJpy}/人 · ${r.priceCny}</span>
+    </div>
+    <ul class="dine-dishes">${r.signature.map((d) => `<li>${d}</li>`).join('')}</ul>
+    ${r.booking ? `<p class="dine-booking">${r.booking}</p>` : ''}
   </div>`;
 
 const renderPlaceContext = (place) => (
@@ -462,9 +754,10 @@ const renderPlace = (place, index) => `
     </header>
     ${place.address ? `<p class="address">${place.address}</p>` : ''}
     <p class="place-description">${place.description}</p>
+    ${place.restaurant ? renderRestaurant(place.restaurant) : ''}
     <ul class="tip-list">${place.tips.map((tip) => `<li>${tip}</li>`).join('')}</ul>
     ${renderPlaceContext(place)}
-    ${renderPhotos(place.photos)}
+    ${renderCarousel(place.photos)}
     ${renderMap(place)}
     <div class="source-actions">
       <a href="${place.website}" target="_blank" rel="noreferrer">官网 / 参考资料 ↗</a>
@@ -472,10 +765,28 @@ const renderPlace = (place, index) => `
     </div>
   </article>`;
 
-const renderTimeline = (items) => `
+const renderPlaces = (places) => places.map((place, i) => {
+  const connector = i > 0 && place.transit ? renderTransit(place.transit) : '';
+  return connector + renderPlace(place, i);
+}).join('');
+
+const activeTimelineIndex = (items, minutes) => {
+  let active = -1;
+  items.forEach(([time], i) => {
+    const start = parseStartMinutes(time);
+    if (start !== null && start <= minutes) active = i;
+  });
+  if (active === -1) {
+    const firstTimed = items.findIndex(([time]) => parseStartMinutes(time) !== null);
+    return firstTimed;
+  }
+  return active;
+};
+
+const renderTimeline = (items, activeIndex = -1) => `
   <ol class="timeline">
-    ${items.map(([time, name, note]) => `
-      <li>
+    ${items.map(([time, name, note], i) => `
+      <li${i === activeIndex ? ' class="is-now"' : ''}>
         <time>${time}</time>
         <div><strong>${name}</strong><span>${note}</span></div>
       </li>`).join('')}
@@ -519,12 +830,16 @@ const renderFlightDetail = (flight) => `
     <p class="flight-credit">机型、航站楼与时刻以 ANA App 当日通知为准 · 机图 <a href="${ANA767_PHOTO_SOURCE}" target="_blank" rel="noreferrer">${PHOTO_SOURCES.ana767} ↗</a></p>
   </article>`;
 
-const renderDay = (day, index) => `
-  <section class="day-section section-anchor" id="${day.id}" data-nav-section>
+const renderDay = (day, index) => {
+  const status = tripStatus();
+  const isToday = status.phase === 'during' && status.dayId === day.id;
+  const activeIndex = isToday ? activeTimelineIndex(day.timeline, status.minutes) : -1;
+  return `
+  <section class="day-section section-anchor${isToday ? ' is-today' : ''}" id="${day.id}" data-nav-section>
     <header class="day-heading">
       <div class="day-number"><span>Day</span>${String(index + 1).padStart(2, '0')}</div>
       <div class="day-title">
-        <p>${day.date} / ${day.weekday} · ${day.area}</p>
+        <p>${day.date} / ${day.weekday} · ${day.area}${isToday ? ' <span class="today-tag">Today</span>' : ''}</p>
         <h2>${day.title}</h2>
       </div>
       <div class="weather-card">
@@ -538,7 +853,7 @@ const renderDay = (day, index) => `
     <div class="day-layout">
       <aside class="day-rail">
         <p class="rail-label">Schedule</p>
-        ${renderTimeline(day.timeline)}
+        ${renderTimeline(day.timeline, activeIndex)}
       </aside>
       <div class="day-content">
         ${day.flightDetail ? renderFlightDetail(day.flightDetail) : ''}
@@ -548,14 +863,49 @@ const renderDay = (day, index) => `
           ${day.primaryLink ? `<a class="button button-primary day-primary-link" href="${day.primaryLink[1]}" target="_blank" rel="noreferrer">${day.primaryLink[0]} ↗</a>` : ''}
         </div>
         ${renderNotices(day.notices)}
-        <div class="places">${day.places.map(renderPlace).join('')}</div>
+        <div class="places">${renderPlaces(day.places)}</div>
       </div>
     </div>
   </section>`;
+};
+
+const renderTripStatus = () => {
+  const s = tripStatus();
+  let main;
+  let sub;
+  if (s.phase === 'before') {
+    main = s.daysLeft <= 0 ? '明天出发' : `还有 ${s.daysLeft} 天出发`;
+    sub = '出发前 24 小时再核对一次航站楼、营业时间与天气';
+  } else if (s.phase === 'during') {
+    main = `行程进行中 · Day ${s.dayNumber} / 5`;
+    sub = '下方当天已高亮，进行中的时段带有标记';
+  } else {
+    main = '行程已结束';
+    sub = '回家啦，期待下一次东京';
+  }
+  const done = s.phase === 'after' ? 5 : s.phase === 'during' ? s.dayNumber : 0;
+  return `
+  <div class="trip-status trip-status-${s.phase}" data-trip-status>
+    <div class="trip-status-main">
+      <strong data-countdown>${main}</strong>
+      <span>${sub}</span>
+    </div>
+    <div class="trip-progress" aria-hidden="true"><span style="width:${(done / 5) * 100}%"></span></div>
+    <div class="trip-progress-marks">
+      ${TRIP_DAY_IDS.map((id, i) => {
+        const state = s.phase === 'during' && s.dayNumber === i + 1
+          ? 'is-now'
+          : (i + 1 <= done ? 'is-done' : '');
+        return `<a href="#${id}" class="${state}"><b>${['18', '19', '20', '21', '22'][i]}</b><i>${['四', '五', '六', '日', '一'][i]}</i></a>`;
+      }).join('')}
+    </div>
+  </div>`;
+};
 
 const renderOverview = () => `
   <section class="overview section-anchor" id="overview" data-nav-section>
     <div class="section-label">Trip Overview</div>
+    ${renderTripStatus()}
     <div class="overview-heading">
       <h2>五天，七个东京片区，<br>再加一日山水。</h2>
       <p>以预约项目为锚点，把美术馆、街区、购物和爵士夜串成顺路动线。KITTE 与 Alpen 是体力不足时最先删除的项目。</p>
@@ -587,10 +937,55 @@ const renderChecklist = () => `
   <section class="checklist section-anchor" id="checklist" data-nav-section>
     <div class="section-label">Before Departure</div>
     <div class="checklist-layout">
-      <div><h2>出发前<br>最后确认</h2><p>动态信息会变化。航站楼、营业时间、天气与一日团集合信息应在出发前 24 小时再次核对。</p></div>
-      <ul>${trip.checklist.map((item) => `<li><span></span>${item}</li>`).join('')}</ul>
+      <div>
+        <h2>出发前<br>最后确认</h2>
+        <p>动态信息会变化。航站楼、营业时间、天气与一日团集合信息应在出发前 24 小时再次核对。</p>
+        <p class="check-summary" data-check-summary></p>
+      </div>
+      <ul class="checklist-items">${trip.checklist.map((item, i) => `
+        <li><label><input type="checkbox" data-check="ck-${i}"><span class="ck-box" aria-hidden="true"></span><span class="ck-text">${item}</span></label></li>`).join('')}</ul>
     </div>
-    <p class="freshness">天气预报更新于 ${trip.weatherUpdated}，仅作行程规划参考。</p>
+    <p class="freshness">天气预报更新于 ${trip.weatherUpdated}，仅作行程规划参考。勾选状态保存在本设备。</p>
+  </section>`;
+
+const renderPending = () => `
+  <section class="pending section-anchor" id="pending" data-nav-section>
+    <div class="section-label">On Hold · 待定区</div>
+    <div class="pending-heading">
+      <h2>待定区</h2>
+      <p>暂时不排进每日动线、但仍想保留的项目。需要机动半天时再单独安排，卡片样式与每日景点一致。</p>
+    </div>
+    <div class="places">${trip.pending.map(renderPlace).join('')}</div>
+  </section>`;
+
+const renderExplore = () => `
+  <section class="explore-section section-anchor" id="explore" data-nav-section>
+    <div class="section-label">More to Explore</div>
+    <div class="explore-heading">
+      <h2>还想多走几步？</h2>
+      <p>按当前行程口味挑的备选地点，每类两个。营业时间与票务以各官网当日为准。</p>
+    </div>
+    <div class="explore-groups">
+      ${trip.explore.map((group) => `
+        <div class="explore-group">
+          <h3 class="explore-cat">${group.label}</h3>
+          <div class="explore-cards">
+            ${group.items.map((item) => `
+              <div class="explore-card">
+                <div class="explore-thumb"><img src="${item.img}" alt="${item.alt}" loading="lazy" decoding="async"></div>
+                <div class="explore-body">
+                  <p class="explore-area">${item.area}</p>
+                  <strong>${item.name}</strong>
+                  <span>${item.note}</span>
+                  <div class="explore-actions">
+                    <a href="${googleMap(item.map)}" target="_blank" rel="noreferrer">Google Maps ↗</a>
+                    <a href="${item.source}" target="_blank" rel="noreferrer">图源 ↗</a>
+                  </div>
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>`).join('')}
+    </div>
   </section>`;
 
 const app = document.querySelector('#app');
@@ -601,7 +996,7 @@ heroFacts.innerHTML = `
   <div><span>Base</span><strong>Akasaka</strong><small>VIA INN Prime</small></div>
   <div><span>Key bookings</span><strong>3 Fixed</strong><small>Sushi · Film · Nezu</small></div>`;
 
-app.innerHTML = `${renderOverview()}${trip.days.map(renderDay).join('')}${renderChecklist()}`;
+app.innerHTML = `${renderOverview()}${trip.days.map(renderDay).join('')}${renderExplore()}${renderPending()}${renderChecklist()}`;
 
 const themeButtons = [...document.querySelectorAll('[data-set-theme]')];
 
@@ -632,4 +1027,68 @@ const observer = new IntersectionObserver((entries) => {
 }, { rootMargin: '-20% 0px -65% 0px', threshold: [0, 0.2, 0.6] });
 
 sections.forEach((section) => observer.observe(section));
+
+const CHECK_KEY = 'tokyo-checklist';
+const loadChecks = () => {
+  try { return JSON.parse(localStorage.getItem(CHECK_KEY)) || {}; } catch (_) { return {}; }
+};
+const checkState = loadChecks();
+const checkboxes = [...document.querySelectorAll('[data-check]')];
+const checkSummary = document.querySelector('[data-check-summary]');
+const updateCheckSummary = () => {
+  if (!checkSummary) return;
+  const done = checkboxes.filter((cb) => cb.checked).length;
+  checkSummary.textContent = `已确认 ${done} / ${checkboxes.length} 项`;
+  checkSummary.classList.toggle('is-complete', done === checkboxes.length && checkboxes.length > 0);
+};
+checkboxes.forEach((cb) => {
+  cb.checked = !!checkState[cb.dataset.check];
+  cb.closest('li').classList.toggle('is-checked', cb.checked);
+  cb.addEventListener('change', () => {
+    checkState[cb.dataset.check] = cb.checked;
+    cb.closest('li').classList.toggle('is-checked', cb.checked);
+    try { localStorage.setItem(CHECK_KEY, JSON.stringify(checkState)); } catch (_) {}
+    updateCheckSummary();
+  });
+});
+updateCheckSummary();
+
+document.querySelectorAll('[data-carousel]').forEach((car) => {
+  const track = car.querySelector('[data-carousel-track]');
+  if (!track) return;
+  const dots = [...car.querySelectorAll('[data-carousel-go]')];
+  const count = track.children.length;
+  const slideW = () => track.clientWidth || 1;
+  const current = () => Math.round(track.scrollLeft / slideW());
+  const go = (i) => track.scrollTo({ left: ((i % count) + count) % count * slideW(), behavior: 'smooth' });
+  car.querySelector('[data-carousel-prev]')?.addEventListener('click', () => go(current() - 1));
+  car.querySelector('[data-carousel-next]')?.addEventListener('click', () => go(current() + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => go(i)));
+  let raf;
+  track.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const idx = current();
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
+    });
+  }, { passive: true });
+  car.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); go(current() - 1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); go(current() + 1); }
+  });
+});
+
+const countdownEl = document.querySelector('[data-countdown]');
+if (countdownEl) {
+  setInterval(() => {
+    const s = tripStatus();
+    if (s.phase === 'before') {
+      countdownEl.textContent = s.daysLeft <= 0 ? '明天出发' : `还有 ${s.daysLeft} 天出发`;
+    } else if (s.phase === 'during') {
+      countdownEl.textContent = `行程进行中 · Day ${s.dayNumber} / 5`;
+    } else {
+      countdownEl.textContent = '行程已结束';
+    }
+  }, 60000);
+}
 
