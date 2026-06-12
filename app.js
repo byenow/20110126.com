@@ -5,7 +5,10 @@ const PHOTO_SOURCES = {
   beams: 'BEAMS 官网',
   sometime: 'SOMETIME 官网',
   gotokyo: 'GO TOKYO',
+  ana767: 'Masakatsu Ukon / Wikimedia Commons · CC BY-SA 2.0',
 };
+
+const ANA767_PHOTO_SOURCE = 'https://commons.wikimedia.org/wiki/File:All_Nippon_Airways_Boeing_767-300_JA607A_NRT_(16665861328).jpg';
 
 const googleMap = (query) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
@@ -38,6 +41,23 @@ const trip = {
       weekday: 'THU',
       title: '抵达东京，慢慢进入城市',
       area: '羽田 · 赤坂 · 丸之内',
+      flightDetail: {
+        number: 'NH964',
+        direction: '去程',
+        date: '6/18',
+        weekday: 'THU',
+        status: '航班已定',
+        from: { code: 'PEK', name: '北京首都', terminal: 'T3', time: '08:20' },
+        to: { code: 'HND', name: '东京羽田', terminal: 'T3', time: '12:55' },
+        distance: '2,088 km',
+        duration: '约 3h35m',
+        aircraft: 'Boeing 767-300ER',
+        aircraftNote: '双发宽体',
+        reg: 'JA623A / JA625A / JA627A',
+        callsign: 'ALL NIPPON 964',
+        cruise: '约 FL360 · 11,000 m',
+        seatTip: '白天东向航段，晴天在下降进近段右侧（K 排靠窗）有机会远眺富士山；以当日进近方向为准。',
+      },
       weather: { icon: 'Rain', temp: '20—24°C', text: '预计有雨', note: '穿防水鞋，随身带折叠伞。若入境延误，直接取消 KITTE。' },
       timeline: [
         ['08:20—12:55', 'NH964 北京首都 → 东京羽田', '航班已定'],
@@ -300,6 +320,23 @@ const trip = {
       weekday: 'MON',
       title: '咖啡与庭园，然后回家',
       area: '清澄白河 · 赤坂 · 羽田',
+      flightDetail: {
+        number: 'NH963',
+        direction: '返程',
+        date: '6/22',
+        weekday: 'MON',
+        status: '航班已定',
+        from: { code: 'HND', name: '东京羽田', terminal: 'T3', time: '17:15' },
+        to: { code: 'PEK', name: '北京首都', terminal: 'T3', time: '20:15' },
+        distance: '2,088 km',
+        duration: '约 3h55m',
+        aircraft: 'Boeing 767-300ER',
+        aircraftNote: '双发宽体',
+        reg: 'JA623A / JA625A / JA627A',
+        callsign: 'ALL NIPPON 963',
+        cruise: '约 FL360 · 11,000 m',
+        seatTip: '傍晚西向航段，左侧（A 排靠窗）有机会看到夕阳与海岸线；以当日航向为准。',
+      },
       weather: { icon: 'Sun', temp: '19—27°C', text: '晴间多云', note: '返程日只安排一个街区。最晚 13:30 从赤坂出发前往羽田。' },
       timeline: [
         ['08:30 前', '退房或寄存行李', '确认取件流程'],
@@ -394,6 +431,38 @@ const renderNotices = (notices = []) => notices.map((notice) => `
     <p>${notice.text}</p>
   </aside>`).join('');
 
+const renderFlightDetail = (flight) => `
+  <article class="flight-card">
+    <header class="flight-card-head">
+      <span class="flight-no">${flight.number}</span>
+      <span class="flight-dir">${flight.direction} · ${flight.date} ${flight.weekday}</span>
+      <span class="flight-status">${flight.status}</span>
+    </header>
+    <div class="flight-banner">
+      <img class="flight-photo" src="assets/ana-767.jpg" alt="ANA 波音 767-300 客机" loading="lazy" decoding="async" width="1600" height="1067">
+      <span class="flight-scrim" aria-hidden="true"></span>
+      <svg class="flight-route" viewBox="0 0 520 150" role="img" aria-label="${flight.from.code} 飞往 ${flight.to.code} 航路示意图">
+        <path class="rt-line" d="M70 105 Q260 38 450 105" fill="none" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+        <circle class="rt-dot" cx="70" cy="105" r="6"/>
+        <circle class="rt-dot" cx="450" cy="105" r="6"/>
+        <path class="rt-dot" d="M252 70 L270 64 L252 58 L256 64 Z"/>
+        <text class="rt-code" x="70" y="129" text-anchor="middle">${flight.from.code}</text>
+        <text class="rt-sub" x="70" y="145" text-anchor="middle">${flight.from.name} ${flight.from.terminal} · ${flight.from.time}</text>
+        <text class="rt-code" x="450" y="129" text-anchor="middle">${flight.to.code}</text>
+        <text class="rt-sub" x="450" y="145" text-anchor="middle">${flight.to.name} ${flight.to.terminal} · ${flight.to.time}</text>
+        <text class="rt-sub" x="260" y="92" text-anchor="middle">${flight.distance} · 飞行${flight.duration}</text>
+      </svg>
+    </div>
+    <div class="flight-specs">
+      <div><span class="flight-spec-label">机型</span><span class="flight-spec-val">${flight.aircraft} · ${flight.aircraftNote}</span></div>
+      <div><span class="flight-spec-label">典型注册号</span><span class="flight-spec-val">${flight.reg}</span></div>
+      <div><span class="flight-spec-label">呼号 Callsign</span><span class="flight-spec-val">${flight.callsign}</span></div>
+      <div><span class="flight-spec-label">巡航高度</span><span class="flight-spec-val">${flight.cruise}</span></div>
+    </div>
+    <p class="flight-seat"><span>选座 · 观景</span>${flight.seatTip}</p>
+    <p class="flight-credit">机型、航站楼与时刻以 ANA App 当日通知为准 · 机图 <a href="${ANA767_PHOTO_SOURCE}" target="_blank" rel="noreferrer">${PHOTO_SOURCES.ana767} ↗</a></p>
+  </article>`;
+
 const renderDay = (day, index) => `
   <section class="day-section section-anchor" id="${day.id}" data-nav-section>
     <header class="day-heading">
@@ -416,6 +485,7 @@ const renderDay = (day, index) => `
         ${renderTimeline(day.timeline)}
       </aside>
       <div class="day-content">
+        ${day.flightDetail ? renderFlightDetail(day.flightDetail) : ''}
         <div class="day-intro">
           <p>${day.intro}</p>
           <div class="transit"><span>Transit</span><p>${day.transit}</p></div>
