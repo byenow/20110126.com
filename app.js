@@ -103,7 +103,7 @@ const trip = {
           photos: [
             { src: 'assets/aburasoba.jpg', alt: '油そば（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Abura_soba_01.jpg' },
             { src: 'assets/aburasoba-2.jpg', alt: '油そば拌开后（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Abura_soba_02.jpg' },
-            { src: commonsFile('Abura_soba_01.jpg'), alt: '油そば（无汤拌面）特写', credit: PHOTO_SOURCES.commons, source: commonsPage('Abura_soba_01.jpg') },
+            { src: commonsFile('Abura_soba_by_mitsukuni.jpg'), alt: '油そば（另一种盛法，示意）', credit: PHOTO_SOURCES.commons, source: commonsPage('Abura_soba_by_mitsukuni.jpg') },
           ],
         },
         {
@@ -128,7 +128,7 @@ const trip = {
           photos: [
             { src: 'assets/kitte.jpg', alt: 'JP Tower 与 KITTE 外观', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/4/41/JP_Tower-1c.jpg' },
             { src: 'assets/tokyo-station.jpg', alt: '东京站丸之内站舍', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Tokyo_Station_Marunouchi_Building_P5228787.jpg' },
-            { src: commonsFile('Tokyo_Station_Marunouchi_Building_P5228787.jpg'), alt: '丸之内一带的东京站景观', credit: PHOTO_SOURCES.commons, source: commonsPage('Tokyo_Station_Marunouchi_Building_P5228787.jpg') },
+            { src: commonsFile('KITTE Marunouchi Atrium 201912.jpg'), alt: 'KITTE 丸之内中庭挑空', credit: PHOTO_SOURCES.commons, source: commonsPage('KITTE Marunouchi Atrium 201912.jpg') },
           ],
         },
         {
@@ -161,7 +161,7 @@ const trip = {
           photos: [
             { src: 'assets/nigiri.jpg', alt: '握寿司拼盘（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Nigiri_Moriawase_(Sushi_Sei)_(42217840971).jpg' },
             { src: 'assets/nigiri-2.jpg', alt: '本鲔握寿司（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Tuna_nigiri_sushi_-_Sushiko_(2648979899).jpg' },
-            { src: commonsFile('Nigiri_Moriawase_(Sushi_Sei)_(42217840971).jpg'), alt: '握寿司拼盘（示意）', credit: PHOTO_SOURCES.commons, source: commonsPage('Nigiri_Moriawase_(Sushi_Sei)_(42217840971).jpg') },
+            { src: commonsFile('Unagi nigiri sushi - Sushiko (2648979137).jpg'), alt: '穴子/鳗鱼握寿司（示意）', credit: PHOTO_SOURCES.commons, source: commonsPage('Unagi nigiri sushi - Sushiko (2648979137).jpg') },
           ],
         },
       ],
@@ -202,7 +202,7 @@ const trip = {
           photos: [
             { src: 'assets/nmwa-exterior.jpg', alt: '国立西洋美术馆外观', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/National_museum_of_western_art05s3200.jpg' },
             { src: 'assets/nmwa-interior.jpg', alt: '国立西洋美术馆馆内空间', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Tokyo_National_Museum_of_Western_Art_Interior_2.jpg' },
-            { src: commonsFile('National_museum_of_western_art05s3200.jpg'), alt: '上野公园内的国立西洋美术馆建筑', credit: PHOTO_SOURCES.commons, source: commonsPage('National_museum_of_western_art05s3200.jpg') },
+            { src: commonsFile('Tokyo National Museum of Western Art seen from the south.jpg'), alt: '国立西洋美术馆南侧外观', credit: PHOTO_SOURCES.commons, source: commonsPage('Tokyo National Museum of Western Art seen from the south.jpg') },
           ],
         },
         {
@@ -302,7 +302,7 @@ const trip = {
           photos: [
             { src: 'assets/alpen-building.jpg', alt: 'Alpen TOKYO 所在建筑', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Shinjuku_Yunika_Building_Alpen_TOKYO_%28Ready_to_open%29_March_2022.jpg' },
             { src: 'assets/alpen-exterior.jpg', alt: 'Alpen TOKYO 外观', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Shinjuku_Yunika_Building_Alpen_TOKYO_202408061151_IMG_0394.jpg' },
-            { src: commonsFile('Shinjuku_Yunika_Building_Alpen_TOKYO_202408061151_IMG_0394.jpg'), alt: '新宿街头的 Alpen TOKYO 建筑立面', credit: PHOTO_SOURCES.commons, source: commonsPage('Shinjuku_Yunika_Building_Alpen_TOKYO_202408061151_IMG_0394.jpg') },
+            { src: commonsFile('Shinjuku Yunika Building Alpen TOKYO November 2023.jpg'), alt: '新宿 Alpen TOKYO 夜间立面', credit: PHOTO_SOURCES.commons, source: commonsPage('Shinjuku Yunika Building Alpen TOKYO November 2023.jpg') },
           ],
         },
       ],
@@ -344,7 +344,7 @@ const trip = {
           photos: [
             { src: 'assets/nezu-garden.jpg', alt: '根津美术馆庭园', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Nezu_Museum_Garten-20091020-RM-112901.jpg' },
             { src: 'assets/nezu-teahouse.jpg', alt: '根津美术馆庭园与茶室', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Nezu_Museum_Garten-20091020-RM-113550.jpg' },
-            { src: commonsFile('Nezu_Museum_Garten-20091020-RM-113550.jpg'), alt: '根津美术馆庭园中的茶室景观', credit: PHOTO_SOURCES.commons, source: commonsPage('Nezu_Museum_Garten-20091020-RM-113550.jpg') },
+            { src: commonsFile('Nezu Museum Garten-20091020-RM-114344.jpg'), alt: '根津美术馆庭园步道', credit: PHOTO_SOURCES.commons, source: commonsPage('Nezu Museum Garten-20091020-RM-114344.jpg') },
           ],
         },
         {
@@ -367,7 +367,7 @@ const trip = {
           photos: [
             { src: 'assets/shimokitazawa-street.jpg', alt: '下北泽街景', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/e/ed/Walk_in_Shimokitazawa_3.jpg' },
             { src: 'assets/shimokitazawa-walk.jpg', alt: '下北泽街区散步', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Walk_in_Shimokitazawa_4.jpg' },
-            { src: commonsFile('Walk_in_Shimokitazawa_3.jpg'), alt: '下北泽独立店铺与街巷', credit: PHOTO_SOURCES.commons, source: commonsPage('Walk_in_Shimokitazawa_3.jpg') },
+            { src: commonsFile('Public blackboards, Shimokitazawa, Tokyo 2013-03-16.jpg'), alt: '下北泽街角的留言黑板', credit: PHOTO_SOURCES.commons, source: commonsPage('Public blackboards, Shimokitazawa, Tokyo 2013-03-16.jpg') },
           ],
         },
         {
@@ -389,7 +389,7 @@ const trip = {
           photos: [
             { src: 'assets/kichijoji-inokashira.jpg', alt: '井之头公园池畔', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Inokashira_park_pond_2024.jpg' },
             { src: 'assets/kichijoji-sunroad.jpg', alt: '吉祥寺 SUNROAD 商店街', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Gate_of_the_Kichijoji_Sunroad_at_Night.jpg' },
-            { src: commonsFile('Inokashira_park_pond_2024.jpg'), alt: '井之头公园池畔景观', credit: PHOTO_SOURCES.commons, source: commonsPage('Inokashira_park_pond_2024.jpg') },
+            { src: commonsFile('Swan Boat (10507765895).jpg'), alt: '井之头公园天鹅船', credit: PHOTO_SOURCES.commons, source: commonsPage('Swan Boat (10507765895).jpg') },
           ],
         },
         {
@@ -422,7 +422,7 @@ const trip = {
           photos: [
             { src: 'assets/tendon.jpg', alt: '天丼（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Tendon.jpg' },
             { src: 'assets/tendon-2.jpg', alt: '大海老天丼（示意）', credit: PHOTO_SOURCES.commons, source: 'https://commons.wikimedia.org/wiki/File:Rice_bowl_topped_with_shrimp_tempura_(8281030764).jpg' },
-            { src: commonsFile('Tendon.jpg'), alt: '天丼（天ぷら盖饭，示意）', credit: PHOTO_SOURCES.commons, source: commonsPage('Tendon.jpg') },
+            { src: commonsFile('Tendon one meal.jpg'), alt: '天丼套餐（示意）', credit: PHOTO_SOURCES.commons, source: commonsPage('Tendon one meal.jpg') },
           ],
         },
         {
@@ -488,7 +488,7 @@ const trip = {
           website: 'https://www.toshogu.jp/english/',
           photos: [
             { src: 'assets/nikko-toshogu.jpg', alt: '日光东照宫', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Nikko_toshogu_shrine.jpg' },
-            { src: commonsFile('Nikko_toshogu_shrine.jpg'), alt: '日光东照宫社殿群', credit: PHOTO_SOURCES.commons, source: commonsPage('Nikko_toshogu_shrine.jpg') },
+            { src: commonsFile('The Three Wise Monkeys, Nikkō Tōshō-gū; April 2018.jpg'), alt: '日光东照宫 三猿雕刻', credit: PHOTO_SOURCES.commons, source: commonsPage('The Three Wise Monkeys, Nikkō Tōshō-gū; April 2018.jpg') },
             { src: commonsFile('Yomeimon_Gate,_Nikko_Toshogu.jpg'), alt: '日光东照宫阳明门装饰', credit: PHOTO_SOURCES.commons, source: commonsPage('Yomeimon_Gate,_Nikko_Toshogu.jpg') },
           ],
         },
@@ -506,7 +506,7 @@ const trip = {
           website: 'https://www.pref.tochigi.lg.jp/h07/kegonnotaki_rakusuiryo.html',
           photos: [
             { src: 'assets/kegon-falls.jpg', alt: '华严瀑布丰水期景观', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Kegon_Taki.jpg' },
-            { src: commonsFile('Kegon_Taki.jpg'), alt: '华严瀑布与岩壁', credit: PHOTO_SOURCES.commons, source: commonsPage('Kegon_Taki.jpg') },
+            { src: commonsFile('Kegon falls-2006-03-21 2.jpg'), alt: '华严瀑布另一视角', credit: PHOTO_SOURCES.commons, source: commonsPage('Kegon falls-2006-03-21 2.jpg') },
             { src: commonsFile('Lake_Chuzenji_and_Mount_Nantai.jpg'), alt: '华严瀑布上游的中禅寺湖与男体山', credit: PHOTO_SOURCES.commons, source: commonsPage('Lake_Chuzenji_and_Mount_Nantai.jpg') },
           ],
         },
@@ -563,7 +563,7 @@ const trip = {
           photos: [
             { src: 'assets/kiyosumi-garden.jpg', alt: '清澄庭园', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Kiyosumi_Garden_%2811301989825%29.jpg' },
             { src: 'assets/kiyosumi-view.jpg', alt: '清澄庭园景观', credit: PHOTO_SOURCES.gotokyo, source: 'https://www.gotokyo.org/en/spot/25/index.html' },
-            { src: commonsFile('Kiyosumi_Garden_(11301989825).jpg'), alt: '清澄庭园池泉与步石', credit: PHOTO_SOURCES.commons, source: commonsPage('Kiyosumi_Garden_(11301989825).jpg') },
+            { src: commonsFile('Kiyosumi Garden (9224572179).jpg'), alt: '清澄庭园另一处池景', credit: PHOTO_SOURCES.commons, source: commonsPage('Kiyosumi Garden (9224572179).jpg') },
           ],
         },
       ],
@@ -585,7 +585,7 @@ const trip = {
       photos: [
         { src: 'assets/jimbocho-books.jpg', alt: '神保町古书店', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Used_bookstore_in_Jinb%C5%8Dch%C5%8D_001.jpg' },
         { src: 'assets/jimbocho-street.jpg', alt: '神保町书店街', credit: PHOTO_SOURCES.commons, source: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Sanseido_bookstore_kanda-jimbocho_Oct_15_2021_various.jpeg' },
-        { src: commonsFile('Used_bookstore_in_Jinbōchō_001.jpg'), alt: '神保町街角的古书店铺面', credit: PHOTO_SOURCES.commons, source: commonsPage('Used_bookstore_in_Jinbōchō_001.jpg') },
+        { src: commonsFile('Kitazawa Foreign Bookstore, at Kanda-Jinbocho.jpg'), alt: '神保町 北泽洋书店', credit: PHOTO_SOURCES.commons, source: commonsPage('Kitazawa Foreign Bookstore, at Kanda-Jinbocho.jpg') },
       ],
     },
   ],
